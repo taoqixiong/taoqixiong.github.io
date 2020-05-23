@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zimiao.moe/"/>
-  <updated>2020-03-13T07:02:49.000Z</updated>
+  <updated>2020-05-23T03:44:26.841Z</updated>
   <id>https://zimiao.moe/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>使用 Linux 虚拟机模拟 JoyControl 刷 Amiibo</title>
+    <link href="https://zimiao.moe/posts/38470/"/>
+    <id>https://zimiao.moe/posts/38470/</id>
+    <published>2020-05-17T09:14:00.000Z</published>
+    <updated>2020-05-23T03:44:26.841Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;在某天上班摸鱼刷推的时候看到一条推&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://cdn.zimiao.moe/38470/posts_
+      
+    
+    </summary>
+    
+    
+    
+      <category term="折腾" scheme="https://zimiao.moe/tags/%E6%8A%98%E8%85%BE/"/>
+    
+      <category term="Nintendo Switch" scheme="https://zimiao.moe/tags/Nintendo-Switch/"/>
+    
+  </entry>
+  
+  <entry>
     <title>开箱 - Elgato HD60S 采集盒</title>
     <link href="https://zimiao.moe/posts/46684/"/>
     <id>https://zimiao.moe/posts/46684/</id>
     <published>2019-10-07T04:51:00.000Z</published>
-    <updated>2020-03-13T07:02:49.000Z</updated>
+    <updated>2020-05-17T05:39:37.000Z</updated>
     
     <summary type="html">
     
@@ -43,7 +68,7 @@
     <link href="https://zimiao.moe/posts/61260/"/>
     <id>https://zimiao.moe/posts/61260/</id>
     <published>2019-10-05T21:31:00.000Z</published>
-    <updated>2020-03-13T07:02:49.000Z</updated>
+    <updated>2020-05-17T05:39:37.000Z</updated>
     
     <summary type="html">
     
@@ -65,7 +90,7 @@
     <link href="https://zimiao.moe/posts/53555/"/>
     <id>https://zimiao.moe/posts/53555/</id>
     <published>2019-04-26T07:00:00.000Z</published>
-    <updated>2020-03-13T07:02:49.000Z</updated>
+    <updated>2020-05-17T05:39:37.000Z</updated>
     
     <summary type="html">
     
@@ -87,7 +112,7 @@
     <link href="https://zimiao.moe/posts/20593/"/>
     <id>https://zimiao.moe/posts/20593/</id>
     <published>2019-02-12T17:21:00.000Z</published>
-    <updated>2020-03-16T02:57:48.840Z</updated>
+    <updated>2020-05-17T05:39:37.000Z</updated>
     
     <summary type="html">
     
@@ -118,7 +143,7 @@
     <link href="https://zimiao.moe/posts/61570/"/>
     <id>https://zimiao.moe/posts/61570/</id>
     <published>2018-02-12T07:58:00.000Z</published>
-    <updated>2020-03-13T07:02:49.000Z</updated>
+    <updated>2020-05-17T05:39:37.000Z</updated>
     
     <summary type="html">
     
@@ -140,7 +165,7 @@
     <link href="https://zimiao.moe/posts/44799/"/>
     <id>https://zimiao.moe/posts/44799/</id>
     <published>2017-12-23T18:24:00.000Z</published>
-    <updated>2020-03-13T07:02:49.000Z</updated>
+    <updated>2020-05-17T05:39:37.000Z</updated>
     
     <summary type="html">
     
@@ -162,7 +187,7 @@
     <link href="https://zimiao.moe/posts/7056/"/>
     <id>https://zimiao.moe/posts/7056/</id>
     <published>2017-10-08T12:04:00.000Z</published>
-    <updated>2020-03-13T07:02:49.000Z</updated>
+    <updated>2020-05-17T05:39:37.000Z</updated>
     
     <summary type="html">
     
@@ -189,7 +214,7 @@
     <link href="https://zimiao.moe/posts/51311/"/>
     <id>https://zimiao.moe/posts/51311/</id>
     <published>2017-05-28T17:40:00.000Z</published>
-    <updated>2020-03-13T07:02:49.000Z</updated>
+    <updated>2020-05-17T05:39:37.000Z</updated>
     
     <summary type="html">
     
@@ -213,7 +238,7 @@
     <link href="https://zimiao.moe/posts/18671/"/>
     <id>https://zimiao.moe/posts/18671/</id>
     <published>2017-05-25T16:33:00.000Z</published>
-    <updated>2020-03-13T07:02:49.000Z</updated>
+    <updated>2020-05-17T05:39:37.000Z</updated>
     
     <summary type="html">
     
@@ -238,7 +263,7 @@
     <link href="https://zimiao.moe/posts/38685/"/>
     <id>https://zimiao.moe/posts/38685/</id>
     <published>2017-05-25T04:52:00.000Z</published>
-    <updated>2020-03-13T07:02:49.000Z</updated>
+    <updated>2020-05-17T05:39:37.000Z</updated>
     
     <summary type="html">
     
@@ -262,7 +287,7 @@
     <link href="https://zimiao.moe/posts/11941/"/>
     <id>https://zimiao.moe/posts/11941/</id>
     <published>2017-03-21T13:31:00.000Z</published>
-    <updated>2020-03-13T07:02:49.000Z</updated>
+    <updated>2020-05-17T05:39:37.000Z</updated>
     
     <summary type="html">
     
@@ -287,7 +312,7 @@
     <link href="https://zimiao.moe/posts/16108/"/>
     <id>https://zimiao.moe/posts/16108/</id>
     <published>2016-12-04T02:42:00.000Z</published>
-    <updated>2020-03-13T07:02:49.000Z</updated>
+    <updated>2020-05-17T05:39:37.000Z</updated>
     
     <summary type="html">
     

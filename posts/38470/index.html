@@ -17,7 +17,7 @@
 
   
 
-  <title>标签 | 梓喵</title>
+  <title>使用 Linux 虚拟机模拟 JoyControl 刷 Amiibo | 梓喵</title>
 
   
 
@@ -74,10 +74,7 @@
 
     
 <!-- header container -->
-<header class="header-container">
-
-  
-  
+<header class="header-container post">
 
   
   
@@ -94,47 +91,124 @@
   
   
     <div class="header-content">
-      <div class="post-image" style="background-image: url(https://zimiao.moe/images/cover/ewe515zybpwr0sn.jpg)"></div>
+      <div class="post-image" style="background-image: url(https://zimiao.moe/images/cover/rv2spucgfqab95n.jpg)"></div>
       <div class="post-text">
-        <h1 class="title-wrap">标签</h1>
-        
-        <h2 class="title-sub-wrap">共有9个标签</h2>
-        
+        <div class="type-wrap">
+          
+        </div>
+        <h1 class="title-wrap">使用 Linux 虚拟机模拟 JoyControl 刷 Amiibo</h1>
+        <h2 class="title-sub-wrap">
+          <strong>梓喵</strong>
+          <span>发布于</span>
+          
+  <a href="javascript:;" class="article-date">
+    <time datetime="2020-05-17T09:14:00.000Z" itemprop="datePublished">2020年05月17日</time>
+  </a>
+
+        </h2>
       </div>
     </div>
   
 
+  
+  
+
   </header>
 
-    <!-- 分页(其他自定义页面) -->
+    <!-- 文章 -->
 
-<!-- 自定义页面 -->
+<!-- 文章内容 -->
 
 <div class="body-container">
-  
-  
+  <article class="content-container article-container">
+    <div class="article-content">
+      
+      
 
-  
-  
+      <div class="article-entry">
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在某天上班摸鱼刷推的时候看到一条推</p>
+<p><img src="https://cdn.zimiao.moe/38470/posts_38470_p0.png" alt=""></p>
+<p>原推链接：<a href="https://bit.ly/2z0m09k" target="_blank" rel="noopener">https://bit.ly/2z0m09k</a></p>
+<p>在假期时候试了下还真能用，就记录一下用法</p>
+<p><code>注意：这里不分享 amiibbo 的 bin 文件，请自行使用搜索引擎寻找</code></p>
+<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><p>首先需要准备一台带有蓝牙的 Windows/Linux 的 PC 或者树莓派4/Zero，Windows 用户需要使用<code>VirtualBox</code>来安装桌面版的 Ubuntu 版或其他发行版本，Linux 用户则无需安装虚拟机，暂时不支持 MacOS 用户，WSL/WSL2 均不支持</p>
+<h1 id="VirtualBox-虚拟机设置"><a href="#VirtualBox-虚拟机设置" class="headerlink" title="VirtualBox 虚拟机设置"></a>VirtualBox 虚拟机设置</h1><p>没有安装过桌面版 Linux 需要新增一台新的虚拟机，在Windows 设置中开启蓝牙，在虚拟机的设置中找到<code>USB设备</code>，在<code>USB设备筛选器</code>中添加<code>USB筛选器</code>找到 PC 上的蓝牙适配器并添加上去。已经安装过桌面版的Linux 可以直接在设置中添加蓝牙适配器</p>
+<p><img src="https://cdn.zimiao.moe/38470/posts_38470_p1.png" alt=""></p>
+<p>我这里是用的是苹果原装网卡的蓝牙驱动，根据自己的机器找到蓝牙驱动</p>
+<p>安装完成并设置完后，检查蓝牙驱动是否安装并启用</p>
+<h1 id="安装运行环境"><a href="#安装运行环境" class="headerlink" title="安装运行环境"></a>安装运行环境</h1><p>以下都是虚拟机用户和 Linux 用户需要的步骤</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get update -qy<br>sudo apt-get upgrade -qy<br>sudo apt-get install -qy git python3-pip libglib2.0-dev libhidapi-hidraw0 libhidapi-libusb0 libdbus-1-dev<br>sudo pip3 install hid aioconsole crc8 dbus-python<br></code></pre></td></tr></table></figure>
 
-  
-  
-    <article class="content-container next">
-      <div class="article-content">
-        <div class="tags-cloud">
-          <a href="/tags/Archlinux/" style="font-size: 1em; color: #f7c068">Archlinux</a> <a href="/tags/Cubieboard2/" style="font-size: 1.67em; color: #fa9d63">Cubieboard2</a> <a href="/tags/Linux/" style="font-size: 1em; color: #f7c068">Linux</a> <a href="/tags/Nginx/" style="font-size: 1em; color: #f7c068">Nginx</a> <a href="/tags/Nintendo-Switch/" style="font-size: 1em; color: #f7c068">Nintendo Switch</a> <a href="/tags/SNI/" style="font-size: 1em; color: #f7c068">SNI</a> <a href="/tags/%E5%BC%80%E7%AE%B1/" style="font-size: 1em; color: #f7c068">开箱</a> <a href="/tags/%E6%8A%98%E8%85%BE/" style="font-size: 3em; color: #ff5858">折腾</a> <a href="/tags/%E6%B0%B4/" style="font-size: 2.33em; color: #fc7b5d">水</a>
-        </div>
+<h1 id="设置蓝牙服务"><a href="#设置蓝牙服务" class="headerlink" title="设置蓝牙服务"></a>设置蓝牙服务</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo sed -i `s|^ExecStart=/usr/lib/bluetooth/bluetoothd.*$|ExecStart=/usr/lib/bluetooth/bluetoothd --noplugin=input|g` /lib/systemd/system/bluetooth.service<br>sudo systemctl daemon-reload<br>sudo systemctl restart bluetooth<br></code></pre></td></tr></table></figure>
+
+<h1 id="拉取源码"><a href="#拉取源码" class="headerlink" title="拉取源码"></a>拉取源码</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> https://github.com/mart1nro/joycontrol ~/joycontrol<br></code></pre></td></tr></table></figure>
+
+<h1 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h1><p>这里拿动森来举例，首先用正常的手柄移动到狸端机，然后断开正常手柄的连接，在虚拟机中运行下面的命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/joycontrol<br>sudo python3 ./run_controller_cli.py PRO_CONTROLLER<br></code></pre></td></tr></table></figure>
+<p>后面可以选择模拟不同的手柄：<code>JOYCON_R</code>、<code>JOYCON_L</code>和<code>PRO_CONTROLLER</code></p>
+<p><img src="https://cdn.zimiao.moe/38470/posts_38470_p2.png" alt=""></p>
+<p>出现<code>Waitting for Switch to connect..</code>说明启动成功，稍等片刻，NS 会连接上模拟手柄，如果长时间未连接上，多次尝试重新运行命令或者重启模拟器。</p>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>控制方法是通过输入文字来简单控制，但也可以模拟摇杆，暂时还没研究过</p>
+<ul>
+<li><code>a</code> 对应手柄A键</li>
+<li><code>b</code> 对应手柄B键</li>
+<li><code>x</code> 对应手柄X键</li>
+<li><code>y</code> 对应手柄Y键</li>
+<li><code>up</code> 对应手柄方向键上</li>
+<li><code>down</code> 对应手柄方向键下</li>
+<li><code>left</code> 对应手柄方向键左</li>
+<li><code>right</code> 对应手柄方向键右</li>
+</ul>
+<p>刷 Amiibo 方法，先把想要刷的 Amiibo 的 bin 文件放到虚拟机的文件夹内，运行下面的命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">amiibo /path/to/amiibo.bin<br></code></pre></td></tr></table></figure>
+<p>把后面替换成你要刷的 Amiibo 的所在的文件夹和文件名</p>
+
       </div>
-    </article>
+
+      <div class="article-footer">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nintendo-Switch/" rel="tag">#Nintendo Switch</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%98%E8%85%BE/" rel="tag">#折腾</a></li></ul>
+      </div>
+
+      <div class="article-navs">
+        
+<nav class="card-container card-article-nav">
+  <div class="card-wrap">
+    
+    
+      <div id="article-nav-older" class="card-item img">
+        <article>
+          
+            <div class="card-cover" style="background-image: url(https://zimiao.moe/images/cover/ri0ow9kqz4r5hlo.jpg)"></div>
+          
+          <a class="card-link article-nav-link" href="/posts/46684/"></a>
+          <strong class="article-nav-caption">Older</strong>
+          <p class="article-nav-title">
+            
+              开箱 - Elgato HD60S 采集盒
+            
+          </p>
+        </article>
+      </div>
+    
+  </div>
+</nav>
+
+      </div>
+      
+      
+
   
+  <div class="valine-container">
+    <div id="valine_thread" class="valine-thread"></div>
+  </div>
 
   
   
 
-  
-  
+
+    </div>
+  </article>
 </div>
-
 
     <!-- footer container -->
 <footer id="footer" class="footer">
