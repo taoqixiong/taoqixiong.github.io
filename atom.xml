@@ -3,10 +3,10 @@
   <title>梓喵</title>
   
   <subtitle>天使にふれたよ！</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="https://zimiao.moe/atom.xml" rel="self"/>
   
   <link href="https://zimiao.moe/"/>
-  <updated>2020-05-23T04:00:12.000Z</updated>
+  <updated>2021-01-18T09:03:52.129Z</updated>
   <id>https://zimiao.moe/</id>
   
   <author>
@@ -17,27 +17,47 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>搭建 Home Assistant 智能家居环境</title>
+    <link href="https://zimiao.moe/posts/63258/"/>
+    <id>https://zimiao.moe/posts/63258/</id>
+    <published>2021-01-14T04:26:00.000Z</published>
+    <updated>2021-01-18T09:03:52.129Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;环境配置&quot;&gt;&lt;a href=&quot;#环境配置&quot; class=&quot;headerlink&quot; title=&quot;环境配置&quot;&gt;&lt;/a&gt;环境配置&lt;/h1&gt;&lt;h2 id=&quot;首先安装-Docker-环境，已安装可以跳过&quot;&gt;&lt;a href=&quot;#首先安装-Docker-环境，已安装可以跳过&quot;</summary>
+      
+    
+    
+    
+    
+    <category term="智能家居" scheme="https://zimiao.moe/tags/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/"/>
+    
+    <category term="Home Assistant" scheme="https://zimiao.moe/tags/Home-Assistant/"/>
+    
+  </entry>
+  
+  <entry>
     <title>模拟 JoyControl 刷 Amiibo</title>
     <link href="https://zimiao.moe/posts/38470/"/>
     <id>https://zimiao.moe/posts/38470/</id>
     <published>2020-05-17T09:14:30.000Z</published>
-    <updated>2020-05-23T04:00:12.000Z</updated>
+    <updated>2021-01-18T09:03:50.609Z</updated>
     
-    <summary type="html">
     
       
       
-        &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;在某天上班摸鱼刷推的时候看到一条推&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://cdn.zimiao.moe/38470/posts_
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;在某天上班摸鱼刷推的时候看到一条推&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://cdn.zimiao.moe/38470/posts_</summary>
       
     
-    </summary>
     
     
     
-      <category term="折腾" scheme="https://zimiao.moe/tags/%E6%8A%98%E8%85%BE/"/>
+    <category term="折腾" scheme="https://zimiao.moe/tags/%E6%8A%98%E8%85%BE/"/>
     
-      <category term="Nintendo Switch" scheme="https://zimiao.moe/tags/Nintendo-Switch/"/>
+    <category term="Nintendo Switch" scheme="https://zimiao.moe/tags/Nintendo-Switch/"/>
     
   </entry>
   
@@ -46,20 +66,18 @@
     <link href="https://zimiao.moe/posts/46684/"/>
     <id>https://zimiao.moe/posts/46684/</id>
     <published>2019-10-07T04:51:00.000Z</published>
-    <updated>2020-05-17T05:39:37.000Z</updated>
+    <updated>2021-01-18T09:03:50.609Z</updated>
     
-    <summary type="html">
     
       
       
-        &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;一直有直播PS4的想法，借着炼金工房的新作快发售就入手了这个采集盒，之前有想过买圆刚的采集盒，搜了下网上的评论发现还是有不少的问题，翻了下发
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;一直有直播PS4的想法，借着炼金工房的新作快发售就入手了这个采集盒，之前有想过买圆刚的采集盒，搜了下网上的评论发现还是有不少的问题，翻了下发</summary>
       
     
-    </summary>
     
     
     
-      <category term="开箱" scheme="https://zimiao.moe/tags/%E5%BC%80%E7%AE%B1/"/>
+    <category term="开箱" scheme="https://zimiao.moe/tags/%E5%BC%80%E7%AE%B1/"/>
     
   </entry>
   
@@ -68,20 +86,18 @@
     <link href="https://zimiao.moe/posts/61260/"/>
     <id>https://zimiao.moe/posts/61260/</id>
     <published>2019-10-05T21:31:00.000Z</published>
-    <updated>2020-05-17T05:39:37.000Z</updated>
+    <updated>2021-01-18T09:03:50.619Z</updated>
     
-    <summary type="html">
     
       
       
-        &lt;p&gt;&lt;del&gt;咕了很久，&lt;/del&gt;终于在假期把博客的主题给换成 &lt;a href=&quot;https://github.com/miiiku/flex-block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;flex-block&lt;/a&gt; ，之前的主题 &lt;a hre
+    <summary type="html">&lt;p&gt;&lt;del&gt;咕了很久，&lt;/del&gt;终于在假期把博客的主题给换成 &lt;a href=&quot;https://github.com/miiiku/flex-block&quot;&gt;flex-block&lt;/a&gt; ，之前的主题 &lt;a href=&quot;https://github.com/MOxFIVE/h</summary>
       
     
-    </summary>
     
     
     
-      <category term="水" scheme="https://zimiao.moe/tags/%E6%B0%B4/"/>
+    <category term="水" scheme="https://zimiao.moe/tags/%E6%B0%B4/"/>
     
   </entry>
   
@@ -90,20 +106,18 @@
     <link href="https://zimiao.moe/posts/53555/"/>
     <id>https://zimiao.moe/posts/53555/</id>
     <published>2019-04-26T07:00:00.000Z</published>
-    <updated>2020-05-17T05:39:37.000Z</updated>
+    <updated>2021-01-18T09:03:50.609Z</updated>
     
-    <summary type="html">
     
       
       
-        &lt;h1 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h1&gt;&lt;p&gt;Tinc VPN 是一个轻量型的 GNU 协议下的开源软件，通过隧道以及加密技术在互联网点与点之间创立隧道。VPN 是 IP 层面上的，所以
+    <summary type="html">&lt;h1 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h1&gt;&lt;p&gt;Tinc VPN 是一个轻量型的 GNU 协议下的开源软件，通过隧道以及加密技术在互联网点与点之间创立隧道。VPN 是 IP 层面上的，所以</summary>
       
     
-    </summary>
     
     
     
-      <category term="折腾" scheme="https://zimiao.moe/tags/%E6%8A%98%E8%85%BE/"/>
+    <category term="折腾" scheme="https://zimiao.moe/tags/%E6%8A%98%E8%85%BE/"/>
     
   </entry>
   
@@ -112,13 +126,12 @@
     <link href="https://zimiao.moe/posts/20593/"/>
     <id>https://zimiao.moe/posts/20593/</id>
     <published>2019-02-12T17:21:00.000Z</published>
-    <updated>2020-05-17T05:39:37.000Z</updated>
+    <updated>2021-01-18T09:03:50.609Z</updated>
     
-    <summary type="html">
     
       
       
-        &lt;p&gt;过年前组了台小主机放到家里作为主路由器，配置如下：&lt;/p&gt;
+    <summary type="html">&lt;p&gt;过年前组了台小主机放到家里作为主路由器，配置如下：&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -127,14 +140,13 @@
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;&lt;tr&gt;
-&lt;td align
+&lt;td align</summary>
       
     
-    </summary>
     
     
     
-      <category term="水" scheme="https://zimiao.moe/tags/%E6%B0%B4/"/>
+    <category term="水" scheme="https://zimiao.moe/tags/%E6%B0%B4/"/>
     
   </entry>
   
@@ -143,20 +155,18 @@
     <link href="https://zimiao.moe/posts/61570/"/>
     <id>https://zimiao.moe/posts/61570/</id>
     <published>2018-02-12T07:58:00.000Z</published>
-    <updated>2020-05-17T05:39:37.000Z</updated>
+    <updated>2021-01-18T09:03:50.609Z</updated>
     
-    <summary type="html">
     
       
       
-        &lt;h1 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h1&gt;&lt;p&gt;n2n 是 2008 年 lucaderi 开发的 P2P VPN ，只要有台有公网 ip 的服务器，就能远程访问内网的电脑、路由器或者其他
+    <summary type="html">&lt;h1 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h1&gt;&lt;p&gt;n2n 是 2008 年 lucaderi 开发的 P2P VPN ，只要有台有公网 ip 的服务器，就能远程访问内网的电脑、路由器或者其他</summary>
       
     
-    </summary>
     
     
     
-      <category term="折腾" scheme="https://zimiao.moe/tags/%E6%8A%98%E8%85%BE/"/>
+    <category term="折腾" scheme="https://zimiao.moe/tags/%E6%8A%98%E8%85%BE/"/>
     
   </entry>
   
@@ -165,20 +175,18 @@
     <link href="https://zimiao.moe/posts/44799/"/>
     <id>https://zimiao.moe/posts/44799/</id>
     <published>2017-12-23T18:24:00.000Z</published>
-    <updated>2020-05-17T05:39:37.000Z</updated>
+    <updated>2021-01-18T09:03:50.619Z</updated>
     
-    <summary type="html">
     
       
       
-        &lt;p&gt;博客长草这么久，就来除一下草。最近工资到手，考虑了一番最后入了台 PS4 PRO，当天下单，隔天就到了，还买了一台便携显示器。到手之后因为显示器还没发货，就没开过机，显示器足足等了我一个星期才到我手上，显示效果还算不错，不过就重了点。高三的时候还买过台宝石V，没买过几个游戏
+    <summary type="html">&lt;p&gt;博客长草这么久，就来除一下草。最近工资到手，考虑了一番最后入了台 PS4 PRO，当天下单，隔天就到了，还买了一台便携显示器。到手之后因为显示器还没发货，就没开过机，显示器足足等了我一个星期才到我手上，显示效果还算不错，不过就重了点。高三的时候还买过台宝石V，没买过几个游戏</summary>
       
     
-    </summary>
     
     
     
-      <category term="水" scheme="https://zimiao.moe/tags/%E6%B0%B4/"/>
+    <category term="水" scheme="https://zimiao.moe/tags/%E6%B0%B4/"/>
     
   </entry>
   
@@ -187,25 +195,23 @@
     <link href="https://zimiao.moe/posts/7056/"/>
     <id>https://zimiao.moe/posts/7056/</id>
     <published>2017-10-08T12:04:00.000Z</published>
-    <updated>2020-05-17T05:39:37.000Z</updated>
+    <updated>2021-01-18T09:03:50.619Z</updated>
     
-    <summary type="html">
     
       
       
-        &lt;p&gt;从 Nginx 1.11.5 版本开始支持用做 SNI 反代，使用 Nginx 做 SNI 反代比用 SNI Proxy 配置起来更简单、更稳定。&lt;/p&gt;
-&lt;h3 id=&quot;安装依赖&quot;&gt;&lt;a href=&quot;#安装依赖&quot; class=&quot;headerlink&quot; title=&quot;安装依
+    <summary type="html">&lt;p&gt;从 Nginx 1.11.5 版本开始支持用做 SNI 反代，使用 Nginx 做 SNI 反代比用 SNI Proxy 配置起来更简单、更稳定。&lt;/p&gt;
+&lt;h3 id=&quot;安装依赖&quot;&gt;&lt;a href=&quot;#安装依赖&quot; class=&quot;headerlink&quot; title=&quot;安装依</summary>
       
     
-    </summary>
     
     
     
-      <category term="折腾" scheme="https://zimiao.moe/tags/%E6%8A%98%E8%85%BE/"/>
+    <category term="折腾" scheme="https://zimiao.moe/tags/%E6%8A%98%E8%85%BE/"/>
     
-      <category term="Nginx" scheme="https://zimiao.moe/tags/Nginx/"/>
+    <category term="Nginx" scheme="https://zimiao.moe/tags/Nginx/"/>
     
-      <category term="SNI" scheme="https://zimiao.moe/tags/SNI/"/>
+    <category term="SNI" scheme="https://zimiao.moe/tags/SNI/"/>
     
   </entry>
   
@@ -214,22 +220,20 @@
     <link href="https://zimiao.moe/posts/51311/"/>
     <id>https://zimiao.moe/posts/51311/</id>
     <published>2017-05-28T17:40:00.000Z</published>
-    <updated>2020-05-17T05:39:37.000Z</updated>
+    <updated>2021-01-18T09:03:50.619Z</updated>
     
-    <summary type="html">
     
       
       
-        &lt;h2 id=&quot;安装-tigervnc&quot;&gt;&lt;a href=&quot;#安装-tigervnc&quot; class=&quot;headerlink&quot; title=&quot;安装 tigervnc&quot;&gt;&lt;/a&gt;安装 tigervnc&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table
+    <summary type="html">&lt;h2 id=&quot;安装-tigervnc&quot;&gt;&lt;a href=&quot;#安装-tigervnc&quot; class=&quot;headerlink&quot; title=&quot;安装 tigervnc&quot;&gt;&lt;/a&gt;安装 tigervnc&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table</summary>
       
     
-    </summary>
     
     
     
-      <category term="Archlinux" scheme="https://zimiao.moe/tags/Archlinux/"/>
+    <category term="Archlinux" scheme="https://zimiao.moe/tags/Archlinux/"/>
     
-      <category term="折腾" scheme="https://zimiao.moe/tags/%E6%8A%98%E8%85%BE/"/>
+    <category term="折腾" scheme="https://zimiao.moe/tags/%E6%8A%98%E8%85%BE/"/>
     
   </entry>
   
@@ -238,23 +242,21 @@
     <link href="https://zimiao.moe/posts/18671/"/>
     <id>https://zimiao.moe/posts/18671/</id>
     <published>2017-05-25T16:33:00.000Z</published>
-    <updated>2020-05-17T05:39:37.000Z</updated>
+    <updated>2021-01-18T09:03:50.619Z</updated>
     
-    <summary type="html">
     
       
       
-        &lt;p&gt;在 /etc/fstab 中添加&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td clas
+    <summary type="html">&lt;p&gt;在 /etc/fstab 中添加&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td clas</summary>
       
     
-    </summary>
     
     
     
-      <category term="折腾" scheme="https://zimiao.moe/tags/%E6%8A%98%E8%85%BE/"/>
+    <category term="折腾" scheme="https://zimiao.moe/tags/%E6%8A%98%E8%85%BE/"/>
     
-      <category term="Linux" scheme="https://zimiao.moe/tags/Linux/"/>
+    <category term="Linux" scheme="https://zimiao.moe/tags/Linux/"/>
     
   </entry>
   
@@ -263,22 +265,20 @@
     <link href="https://zimiao.moe/posts/38685/"/>
     <id>https://zimiao.moe/posts/38685/</id>
     <published>2017-05-25T04:52:00.000Z</published>
-    <updated>2020-05-17T05:39:37.000Z</updated>
+    <updated>2021-01-18T09:03:50.619Z</updated>
     
-    <summary type="html">
     
       
       
-        &lt;h2 id=&quot;安装显卡驱动&quot;&gt;&lt;a href=&quot;#安装显卡驱动&quot; class=&quot;headerlink&quot; title=&quot;安装显卡驱动&quot;&gt;&lt;/a&gt;安装显卡驱动&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutt
+    <summary type="html">&lt;h2 id=&quot;安装显卡驱动&quot;&gt;&lt;a href=&quot;#安装显卡驱动&quot; class=&quot;headerlink&quot; title=&quot;安装显卡驱动&quot;&gt;&lt;/a&gt;安装显卡驱动&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutt</summary>
       
     
-    </summary>
     
     
     
-      <category term="折腾" scheme="https://zimiao.moe/tags/%E6%8A%98%E8%85%BE/"/>
+    <category term="折腾" scheme="https://zimiao.moe/tags/%E6%8A%98%E8%85%BE/"/>
     
-      <category term="Cubieboard2" scheme="https://zimiao.moe/tags/Cubieboard2/"/>
+    <category term="Cubieboard2" scheme="https://zimiao.moe/tags/Cubieboard2/"/>
     
   </entry>
   
@@ -287,23 +287,21 @@
     <link href="https://zimiao.moe/posts/11941/"/>
     <id>https://zimiao.moe/posts/11941/</id>
     <published>2017-03-21T13:31:00.000Z</published>
-    <updated>2020-05-17T05:39:37.000Z</updated>
+    <updated>2021-01-18T09:03:50.619Z</updated>
     
-    <summary type="html">
     
       
       
-        &lt;p&gt;最近从某宝搞到一块二手 2.5 英寸硬盘，摸出吃灰已久的 CB2 板，用来做家里的低功耗下载机，由于当时买的是 nano 版可刷的系统比较少，所以选择用 SD 卡来装系统。&lt;/p&gt;
-&lt;h2 id=&quot;首先格式化-SD-卡&quot;&gt;&lt;a href=&quot;#首先格式化-SD-卡&quot; clas
+    <summary type="html">&lt;p&gt;最近从某宝搞到一块二手 2.5 英寸硬盘，摸出吃灰已久的 CB2 板，用来做家里的低功耗下载机，由于当时买的是 nano 版可刷的系统比较少，所以选择用 SD 卡来装系统。&lt;/p&gt;
+&lt;h2 id=&quot;首先格式化-SD-卡&quot;&gt;&lt;a href=&quot;#首先格式化-SD-卡&quot; clas</summary>
       
     
-    </summary>
     
     
     
-      <category term="折腾" scheme="https://zimiao.moe/tags/%E6%8A%98%E8%85%BE/"/>
+    <category term="折腾" scheme="https://zimiao.moe/tags/%E6%8A%98%E8%85%BE/"/>
     
-      <category term="Cubieboard2" scheme="https://zimiao.moe/tags/Cubieboard2/"/>
+    <category term="Cubieboard2" scheme="https://zimiao.moe/tags/Cubieboard2/"/>
     
   </entry>
   
@@ -312,16 +310,14 @@
     <link href="https://zimiao.moe/posts/16108/"/>
     <id>https://zimiao.moe/posts/16108/</id>
     <published>2016-12-04T02:42:00.000Z</published>
-    <updated>2020-05-17T05:39:37.000Z</updated>
+    <updated>2021-01-18T09:03:50.609Z</updated>
     
-    <summary type="html">
     
       
       
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
       
     
-    </summary>
     
     
     

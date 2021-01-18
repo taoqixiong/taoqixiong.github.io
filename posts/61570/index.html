@@ -33,7 +33,7 @@
   
 <link rel="stylesheet" href="/css/style.css">
 
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="梓喵" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="梓喵" type="application/atom+xml">
 </head>
 <body>
   <div class="root-container">
@@ -131,29 +131,19 @@
 <h1 id="n2n-源码"><a href="#n2n-源码" class="headerlink" title="n2n 源码"></a>n2n 源码</h1><h2 id="官方旧版"><a href="#官方旧版" class="headerlink" title="官方旧版"></a>官方旧版</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">https://github.com/ntop/n2n<br></code></pre></td></tr></table></figure>
 <h2 id="修正版"><a href="#修正版" class="headerlink" title="修正版"></a>修正版</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">https://github.com/meyerd/n2n<br></code></pre></td></tr></table></figure>
 
-
 <h1 id="Linux-编译-n2n"><a href="#Linux-编译-n2n" class="headerlink" title="Linux 编译 n2n"></a>Linux 编译 n2n</h1><h2 id="安装必要运行库"><a href="#安装必要运行库" class="headerlink" title="安装必要运行库"></a>安装必要运行库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">apt-get install gcc g++ cmake make libssl-dev<br></code></pre></td></tr></table></figure>
-
 <h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">mkdir ~/n2n/n2n_v2/build<br><span class="hljs-built_in">cd</span> ~/n2n/n2n_v2/build<br>cmake ..<br>make<br></code></pre></td></tr></table></figure>
-
 <h1 id="Linux-交叉编译-Windows-版的-n2n"><a href="#Linux-交叉编译-Windows-版的-n2n" class="headerlink" title="Linux 交叉编译 Windows 版的 n2n"></a>Linux 交叉编译 Windows 版的 n2n</h1><h2 id="安装-Mingw"><a href="#安装-Mingw" class="headerlink" title="安装 Mingw"></a>安装 Mingw</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">apt-get install mingw-w64<br></code></pre></td></tr></table></figure>
-
 <h2 id="安装-cmake"><a href="#安装-cmake" class="headerlink" title="安装 cmake"></a>安装 cmake</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">apt-get install cmake<br></code></pre></td></tr></table></figure>
-
 <h2 id="获取-n2n-源码"><a href="#获取-n2n-源码" class="headerlink" title="获取 n2n 源码"></a>获取 n2n 源码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> https://github.com/meyerd/n2n.git<br></code></pre></td></tr></table></figure>
-
 <h2 id="修改文件"><a href="#修改文件" class="headerlink" title="修改文件"></a>修改文件</h2><p>修改在 n2n_v2 中的 cmake 文件夹中的 CMakeToolchainFileMingw32.cmake 里面的</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c">SET(CMAKE_C_COMPILER i686-mingw32-gcc)<br>SET(CMAKE_CXX_COMPILER i686-mingw32-g++)<br></code></pre></td></tr></table></figure>
-
 <p>修改为</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c">SET(CMAKE_C_COMPILER i686-w64-mingw32-gcc)<br>SET(CMAKE_CXX_COMPILER i686-w64-mingw32-g++)<br></code></pre></td></tr></table></figure>
-
 <h2 id="开始编译"><a href="#开始编译" class="headerlink" title="开始编译"></a>开始编译</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">mkdir ~/n2n/n2n_v2/build<br><span class="hljs-built_in">cd</span> ~/n2n/n2n_v2/build<br>cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/CMakeToolchainFileMingw32.cmake --build ./ ../<br>make<br></code></pre></td></tr></table></figure>
 <h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><h2 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">./supernode -l 端口<br></code></pre></td></tr></table></figure>
-
 <h2 id="Linux-客户端-需要权限"><a href="#Linux-客户端-需要权限" class="headerlink" title="Linux 客户端(需要权限)"></a>Linux 客户端(需要权限)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">./edge -d n2n0 -c 虚拟局域网名 -k 密码 -m 指定物理mac地址(可选) -a 内网IP -l 服务端IP:端口号<br></code></pre></td></tr></table></figure>
-
-<h2 id="Windows-客户端"><a href="#Windows-客户端" class="headerlink" title="Windows 客户端"></a>Windows 客户端</h2><p>市面上的 Windows 客户端有两个：一个是 <a href="https://sourceforge.net/projects/n2nedgegui/" target="_blank" rel="noopener">n2nedgegui</a>，另一个是 <a href="http://www.vpnhosting.cz/n2nguien.exe" target="_blank" rel="noopener">n2nguien</a>，前者用的是 V2 版本，后者 V1 和 V2 版本，但这两个用的是官方旧版的内核，如果服务端用的是修正的版本，需要把上面编译好的 edge 替换客户端安装文件夹内的 edge 。</p>
+<h2 id="Windows-客户端"><a href="#Windows-客户端" class="headerlink" title="Windows 客户端"></a>Windows 客户端</h2><p>市面上的 Windows 客户端有两个：一个是 <a target="_blank" rel="noopener" href="https://sourceforge.net/projects/n2nedgegui/">n2nedgegui</a>，另一个是 <a target="_blank" rel="noopener" href="http://www.vpnhosting.cz/n2nguien.exe">n2nguien</a>，前者用的是 V2 版本，后者 V1 和 V2 版本，但这两个用的是官方旧版的内核，如果服务端用的是修正的版本，需要把上面编译好的 edge 替换客户端安装文件夹内的 edge 。</p>
 <p>我这里使用的是 n2nguien ，客户端安装文件夹内 V2 版是用 edge2.exe 来命名的，所以替换 V2 版的时候把名字改为 edge2.exe ，V1 版直接替换就行了。<br><img src="https://i.loli.net/2018/05/02/5ae98660ae3f0.jpg" alt="设置"><br>如果使用的是 V2 版，需要在 Advanced 选择 Use n2n v2 。</p>
 
       </div>
@@ -221,7 +211,7 @@
     <!-- footer container -->
 <footer id="footer" class="footer">
   <div class="footer-container">
-    <p>&copy; 2020 <a href="/" target="_blank">梓喵</a></p>
+    <p>&copy; 2021 <a href="/" target="_blank">梓喵</a></p>
 
     
       <p id="hitokoto"></p>

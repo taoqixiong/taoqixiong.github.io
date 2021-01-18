@@ -17,7 +17,7 @@
 
   
 
-  <title>Cubieboard2 安装 Archlinux 到 SD 卡 | 梓喵</title>
+  <title>搭建 Home Assistant 智能家居环境 | 梓喵</title>
 
   
 
@@ -91,18 +91,18 @@
   
   
     <div class="header-content">
-      <div class="post-image" style="background-image: url(https://zimiao.moe/images/cover/fkp1ybb1l9n12fo.jpg)"></div>
+      <div class="post-image" style="background-image: url(https://zimiao.moe/images/cover/4YSsvyZBz7EX0By.jpg)"></div>
       <div class="post-text">
         <div class="type-wrap">
           
         </div>
-        <h1 class="title-wrap">Cubieboard2 安装 Archlinux 到 SD 卡</h1>
+        <h1 class="title-wrap">搭建 Home Assistant 智能家居环境</h1>
         <h2 class="title-sub-wrap">
           <strong>梓喵</strong>
           <span>发布于</span>
           
   <a href="javascript:;" class="article-date">
-    <time datetime="2017-03-21T13:31:00.000Z" itemprop="datePublished">2017年03月21日</time>
+    <time datetime="2021-01-14T04:26:00.000Z" itemprop="datePublished">2021年01月14日</time>
   </a>
 
         </h2>
@@ -126,27 +126,38 @@
       
 
       <div class="article-entry">
-        <p>最近从某宝搞到一块二手 2.5 英寸硬盘，摸出吃灰已久的 CB2 板，用来做家里的低功耗下载机，由于当时买的是 nano 版可刷的系统比较少，所以选择用 SD 卡来装系统。</p>
-<h2 id="首先格式化-SD-卡"><a href="#首先格式化-SD-卡" class="headerlink" title="首先格式化 SD 卡"></a>首先格式化 SD 卡</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">dd <span class="hljs-keyword">if</span>=/dev/zero of=/dev/mmcblkX bs=1M count=8<br></code></pre></td></tr></table></figure>
-<h3 id="用-fdisk-为-SD-卡分区"><a href="#用-fdisk-为-SD-卡分区" class="headerlink" title="用 fdisk 为 SD 卡分区"></a>用 fdisk 为 SD 卡分区</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">fdisk /dev/mmcblkX<br></code></pre></td></tr></table></figure>
-<h2 id="进入-fdisk-通过以下操作进行分区"><a href="#进入-fdisk-通过以下操作进行分区" class="headerlink" title="进入 fdisk 通过以下操作进行分区"></a>进入 fdisk 通过以下操作进行分区</h2><ol>
-<li>按 <font color='red'>o</font> 键，删除 SD 卡的所有分区。</li>
-<li>现在先按 <font color='red'>n</font> 键，然后按 <font color='red'>p</font> 键，设置第一个分区， 第一个扇区设置为 <font color='red'>2048</font>，后面的保持默认，一路按回车键。</li>
-<li>最后按 <font color='red'>w</font> 键保存分区。</li>
-</ol>
-<h2 id="创建-ext4-格式分区"><a href="#创建-ext4-格式分区" class="headerlink" title="创建 ext4 格式分区"></a>创建 ext4 格式分区</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">mkfs.ext4 /dev/mmcblkX<br></code></pre></td></tr></table></figure>
-<h2 id="挂载分区"><a href="#挂载分区" class="headerlink" title="挂载分区"></a>挂载分区</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">mkdir mnt<br>mount /dev/mmcblkX mnt<br></code></pre></td></tr></table></figure>
-<h3 id="下载并解压系统文件"><a href="#下载并解压系统文件" class="headerlink" title="下载并解压系统文件"></a>下载并解压系统文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget https://mirrors.ustc.edu.cn/archlinuxarm/os/ArchLinuxARM-armv7-latest.tar.gz<br>bsdtar -xpf ArchLinuxARM-armv7-latest.tar.gz -C mnt<br>sync<br></code></pre></td></tr></table></figure>
-<h3 id="安装-U-Boot-引导程序"><a href="#安装-U-Boot-引导程序" class="headerlink" title="安装 U-Boot 引导程序"></a>安装 U-Boot 引导程序</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget https://mirrors.ustc.edu.cn/archlinuxarm/os/sunxi/boot/cubieboard2/u-boot-sunxi-with-spl.bin<br>dd <span class="hljs-keyword">if</span>=u-boot-sunxi-with-spl.bin of=/dev/sdX bs=1024 seek=8<br>wget https://mirrors.ustc.edu.cn/archlinuxarm/os/sunxi/boot/cubieboard2/boot.scr -O mnt/boot/boot.scr<br>umount mnt<br>sync<br></code></pre></td></tr></table></figure>
-<p>最后把 SD 卡插上，连接 hdmi 线，通上电源，等待进入系统。</p>
-<h2 id="ssh用户和密码"><a href="#ssh用户和密码" class="headerlink" title="ssh用户和密码"></a>ssh用户和密码</h2><p>普通用户：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">user: alarm<br>password: alarm<br></code></pre></td></tr></table></figure>
-<p>管理员：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">user: root<br>password: root<br></code></pre></td></tr></table></figure>
+        <h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><h2 id="首先安装-Docker-环境，已安装可以跳过"><a href="#首先安装-Docker-环境，已安装可以跳过" class="headerlink" title="首先安装 Docker 环境，已安装可以跳过"></a>首先安装 Docker 环境，已安装可以跳过</h2><p>这里使用 Ubuntu 系统作为演示，其他系统可以根据官方文档进行安装</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/debian/">Debian</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/centos/">CentOS</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/fedora/">Fedora</a></li>
+</ul>
+<p>移除已安装的 Docker 相关组件，以及安装必要的组件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get remove docker docker-engine docker.io containerd runc<br>sudo apt-get update<br>sudo apt-get install \<br>    apt-transport-https \<br>    ca-certificates \<br>    curl \<br>    gnupg-agent \<br>    software-properties-common<br></code></pre></td></tr></table></figure>
+<p>信任 Docker 的 GPG 公钥</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -<br></code></pre></td></tr></table></figure>
+<p>添加 Docker 软件源，可以把 <code>download.docker.com</code> 替换成国内镜像源，根据计算机的 CPU 框架选择合适的命令添加软件仓库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># x86_64/amd64</span><br>sudo add-apt-repository \<br>   <span class="hljs-string">&quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \</span><br><span class="hljs-string">   <span class="hljs-subst">$(lsb_release -cs)</span> \</span><br><span class="hljs-string">   stable&quot;</span><br><br><span class="hljs-comment"># armhf</span><br>sudo add-apt-repository \<br>   <span class="hljs-string">&quot;deb [arch=armhf] https://download.docker.com/linux/ubuntu \</span><br><span class="hljs-string">   <span class="hljs-subst">$(lsb_release -cs)</span> \</span><br><span class="hljs-string">   stable&quot;</span><br><br><span class="hljs-comment"># arm64</span><br>sudo add-apt-repository \<br>   <span class="hljs-string">&quot;deb [arch=arm64] https://download.docker.com/linux/ubuntu \</span><br><span class="hljs-string">   <span class="hljs-subst">$(lsb_release -cs)</span> \</span><br><span class="hljs-string">   stable&quot;</span><br></code></pre></td></tr></table></figure>
+<p>更新源并安装 Docker</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get update<br>sudo apt-get install docker-ce docker-ce-cli containerd.io<br></code></pre></td></tr></table></figure>
+<h2 id="修改-Docker-镜像源"><a href="#修改-Docker-镜像源" class="headerlink" title="修改 Docker 镜像源"></a>修改 Docker 镜像源</h2><p>在 <code>/etc/docker</code> 文件夹内添加 <code>daemon.json</code> 文件，并添加以下内容，可以把下面的七牛云镜像源替换成其他的镜像源</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs json">&#123;<br>  <span class="hljs-attr">&quot;registry-mirrors&quot;</span>: [<span class="hljs-string">&quot;https://reg-mirror.qiniu.com&quot;</span>]<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>添加完成后重启 Docker 服务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo systemctl restart docker<br></code></pre></td></tr></table></figure>
+<h1 id="安装-Home-Assistant-环境"><a href="#安装-Home-Assistant-环境" class="headerlink" title="安装 Home Assistant 环境"></a>安装 Home Assistant 环境</h1><p>拉取 Home Assistant 镜像</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker pull homeassistant/home-assistant:stable<br></code></pre></td></tr></table></figure>
+<p>启动容器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker run -d --name=<span class="hljs-string">&quot;home-assistant&quot;</span> --net=host \<br>       -v /path/to/hass:/config \<br>       -v /etc/localtime:/etc/localtime:ro \<br>       homeassistant/home-assistant:stable<br></code></pre></td></tr></table></figure>
+<p>过段时间打开浏览器 <code>http://&lt;your_ip:8123&gt;</code> 就能访问 Home Assistant 的界面</p>
+<h1 id="参考来源"><a href="#参考来源" class="headerlink" title="参考来源"></a>参考来源</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/ubuntu/">https://docs.docker.com/engine/install/ubuntu/</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.home-assistant.io/docs/installation/docker/">https://www.home-assistant.io/docs/installation/docker/</a></li>
+</ul>
+
       </div>
 
       <div class="article-footer">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Cubieboard2/" rel="tag">#Cubieboard2</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%98%E8%85%BE/" rel="tag">#折腾</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Home-Assistant/" rel="tag">#Home Assistant</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/" rel="tag">#智能家居</a></li></ul>
       </div>
 
       <div class="article-navs">
@@ -154,32 +165,17 @@
 <nav class="card-container card-article-nav">
   <div class="card-wrap">
     
-      <div id="article-nav-newer" class="card-item img">
-        <article>
-          
-            <div class="card-cover" style="background-image: url(https://zimiao.moe/images/cover/r4jhusron4ty24i.jpg)"></div>
-          
-          <a class="card-link article-nav-link" href="/posts/38685/"></a>
-          <strong class="article-nav-caption">Newer</strong>
-          <p class="article-nav-title">
-            
-              Cubieboard2 安装 Lxde 桌面
-            
-          </p>
-        </article>
-      </div>
-    
     
       <div id="article-nav-older" class="card-item img">
         <article>
           
-            <div class="card-cover" style="background-image: url(https://zimiao.moe/images/cover/2ur2ij59mf37vce.jpg)"></div>
+            <div class="card-cover" style="background-image: url(https://zimiao.moe/images/cover/rv2spucgfqab95n.jpg)"></div>
           
-          <a class="card-link article-nav-link" href="/posts/16108/"></a>
+          <a class="card-link article-nav-link" href="/posts/38470/"></a>
           <strong class="article-nav-caption">Older</strong>
           <p class="article-nav-title">
             
-              Hello World
+              模拟 JoyControl 刷 Amiibo
             
           </p>
         </article>

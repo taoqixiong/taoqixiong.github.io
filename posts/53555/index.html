@@ -33,7 +33,7 @@
   
 <link rel="stylesheet" href="/css/style.css">
 
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="梓喵" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="梓喵" type="application/atom+xml">
 </head>
 <body>
   <div class="root-container">
@@ -135,28 +135,23 @@
 <li>跨平台支持</li>
 <li>IPv6 支持</li>
 </ul>
-<p>(上面的内容基本就是官网首页的一个简单的翻译，官方网站：<a href="https://www.tinc-vpn.org/" target="_blank" rel="noopener">https://www.tinc-vpn.org/</a>)</p>
-<h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><p><a href="https://tinc-vpn.org/git/tinc" target="_blank" rel="noopener">https://tinc-vpn.org/git/tinc</a></p>
+<p>(上面的内容基本就是官网首页的一个简单的翻译，官方网站：<a target="_blank" rel="noopener" href="https://www.tinc-vpn.org/">https://www.tinc-vpn.org/</a>)</p>
+<h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><p><a target="_blank" rel="noopener" href="https://tinc-vpn.org/git/tinc">https://tinc-vpn.org/git/tinc</a></p>
 <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>Debian/Ubuntu</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">apt-get install tinc<br></code></pre></td></tr></table></figure>
-
 <p>CentOS</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">yum install tinc<br></code></pre></td></tr></table></figure>
-
 <p>ArchLinux</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pacman -S tinc<br></code></pre></td></tr></table></figure>
-
 <p>Android</p>
-<p><a href="https://tincapp.pacien.org/" target="_blank" rel="noopener">Tinc App</a></p>
+<p><a target="_blank" rel="noopener" href="https://tincapp.pacien.org/">Tinc App</a></p>
 <p>IOS(需越狱)</p>
-<p><a href="https://www.tinc-vpn.org/packages/cydia/" target="_blank" rel="noopener">Cydia packages</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.tinc-vpn.org/packages/cydia/">Cydia packages</a></p>
 <p>Windows</p>
-<p><a href="https://www.tinc-vpn.org/packages/windows/tinc-1.0.35-install.exe" target="_blank" rel="noopener">官方下载地址</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.tinc-vpn.org/packages/windows/tinc-1.0.35-install.exe">官方下载地址</a></p>
 <p>MacOS</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">brew install tinc --devel<br>brew cask install tuntap<br></code></pre></td></tr></table></figure>
-
 <h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs list">&#x2F;etc&#x2F;tinc<br>└── dock<br>    ├── hosts<br>    │   ├── Server<br>    │   └── Client<br>    ├── rsa_key.priv<br>    ├── tinc.conf<br>    ├── tinc-down<br>    └── tinc-up<br></code></pre></td></tr></table></figure>
-
 <ul>
 <li><code>/etc/tinc/dock</code> 目录下的文件都属于<code>dock</code>这个网络，可以根据自己的情况修改名称，相应下面的命令也需要修改</li>
 <li><code>/etc/tinc/dock/hosts</code> 目录是存放其他用户或者说是其他网络的<code>public key</code>以及他们的 ip 地址</li>
@@ -169,7 +164,6 @@
 <h2 id="服务端配置"><a href="#服务端配置" class="headerlink" title="服务端配置"></a>服务端配置</h2><p>首先开启 Linux 转发，在<code>/etc/sysctl.conf</code>设置<code>net.ipv4.ip_forward = 1</code>，并通过<code>sysctl -p</code>来应用配置。</p>
 <p>修改<code>tinc.conf</code>配置文件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs conf">Name &#x3D; Server<br>Interface &#x3D; tinc<br>Mode &#x3D; switch<br>Compression&#x3D;9<br>Cipher  &#x3D; aes-256-cbc<br>Digest &#x3D; sha256<br>PrivateKeyFile&#x3D;&#x2F;etc&#x2F;tinc&#x2F;dock&#x2F;rsa_key.priv<br></code></pre></td></tr></table></figure>
-
 <ul>
 <li><code>Name</code> 主机名称</li>
 <li><code>Interface</code> 隧道所使用的网卡名称</li>
@@ -181,17 +175,13 @@
 </ul>
 <p><code>Linux</code>和<code>MacOS</code>修改<code>tinc-up</code>和<code>tinc-down</code></p>
 <p><code>tinc-up</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/sh</span><br>ifconfig <span class="hljs-variable">$INTERFACE</span> &lt;内网ip&gt; netmask 255.255.255.0<br></code></pre></td></tr></table></figure>
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/sh</span><br>ifconfig <span class="hljs-variable">$INTERFACE</span> &lt;内网ip&gt; netmask 255.255.255.0  <br></code></pre></td></tr></table></figure>
 <p><code>tinc-down</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/sh</span><br>ifconfig <span class="hljs-variable">$INTERFACE</span> down<br></code></pre></td></tr></table></figure>
-
 <p>运行命令添加执行权限</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">chmod +x tinc-*<br></code></pre></td></tr></table></figure>
-
 <p>在<code>hosts</code>文件夹内新建在<code>tinc.conf</code>设置的主机名称的节点配置文件</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs json">Subnet=10.1.3.1/32<br>Address=149.129.88.238<br>Port=57734<br></code></pre></td></tr></table></figure>
-
 <ul>
 <li><code>Subnet</code> 宣告的路由地址</li>
 <li><code>Address</code> 服务器的外网 IP</li>
@@ -199,32 +189,26 @@
 </ul>
 <p>使用命令生成私钥和公钥</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">tincd -n dock -K4096<br></code></pre></td></tr></table></figure>
-
 <p>私钥生成在与<code>tinc.conf</code>配置文件相同的文件夹，生成的公钥会自动添加到<code>hosts</code>文件夹内的节点配置文件里</p>
 <h2 id="客户端配置"><a href="#客户端配置" class="headerlink" title="客户端配置"></a>客户端配置</h2><p>客户端的<code>tinc.conf</code>与服务器的参数基本上相同，只需要修改<code>Name</code></p>
 <p>在<code>hosts</code>文件夹内新建在<code>tinc.conf</code>设置的主机名称的节点配置文件</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">Subnet=10.1.3.2/32<br></code></pre></td></tr></table></figure>
-
 <p><code>tinc-up</code>和<code>tinc-down</code>跟服务器配置基本一样，只需要修改<code>tinc-up</code>的内网ip，<code>Windows</code>客户端无需这两个文件</p>
 <p>使用命令生成私钥和公钥</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">tincd -n dock -K4096<br></code></pre></td></tr></table></figure>
-
 <p>将服务端生成完公钥的节点配置文件放到客户端的<code>hosts</code>文件夹内，并将客户端生成完公钥的节点配置文件放到服务端的<code>hosts</code>文件夹内</p>
 <h1 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h1><p>后台启动</p>
 <p>Windows 端需要先安装虚拟网卡，在 tinc 的安装目录下有虚拟网卡的驱动安装包，安装完成后需要将虚拟网卡名称改为与<code>tinc.conf</code>文件中的<code>Interface</code>名称相同，并且手动设置虚拟网卡的 IP 地址和子网掩码，然后进入到<code>tinc</code>的安装目录下再以管理员的身份运行，运行后会自动创建系统服务，需要停止的时候在 Windows 系统服务管理中停止服务</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># Linux/MacOS</span><br>tincd -n dock<br><span class="hljs-comment"># Windows(需要管理员权限)</span><br>tincd.exe -n dock<br></code></pre></td></tr></table></figure>
-
 <p>运行完后，使用<code>ifconfig</code>查看是否有<code>tinc.conf</code>设置的网卡名称，如果没有请检查<code>tinc-up</code>和<code>tinc-down</code>两个文件是否授予执行的权限；如果已经文件已经赋予权限还是没显示网卡，请使用调试模式运行查看问题</p>
 <p>停止运行，该命令在<code>Windows</code>端会停止运行并删除系统服务</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># Linux/MacOS</span><br>tincd -n dock -k<br><span class="hljs-comment"># Windows(需要管理员权限)</span><br>tincd.exe -n dock -k<br></code></pre></td></tr></table></figure>
-
 <p>调试模式</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># Linux/MacOS</span><br>tincd -n dock -D -d 3<br><span class="hljs-comment"># Windows</span><br>tincd.exe -n dock -D -d 3<br></code></pre></td></tr></table></figure>
-
 <p>注意：调试模式时无法使用<code>Ctrl+C</code>停止运行，需要输入命令<code>tinc -n dock -k</code>才能停止运行</p>
 <h1 id="参考来源"><a href="#参考来源" class="headerlink" title="参考来源"></a>参考来源</h1><ul>
-<li><a href="https://imlonghao.com/46.html" target="_blank" rel="noopener">https://imlonghao.com/46.html</a></li>
-<li><a href="https://blog.zjustin.me/post/tinc-memo/" target="_blank" rel="noopener">https://blog.zjustin.me/post/tinc-memo/</a></li>
+<li><a target="_blank" rel="noopener" href="https://imlonghao.com/46.html">https://imlonghao.com/46.html</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.zjustin.me/post/tinc-memo/">https://blog.zjustin.me/post/tinc-memo/</a></li>
 </ul>
 
       </div>
@@ -292,7 +276,7 @@
     <!-- footer container -->
 <footer id="footer" class="footer">
   <div class="footer-container">
-    <p>&copy; 2020 <a href="/" target="_blank">梓喵</a></p>
+    <p>&copy; 2021 <a href="/" target="_blank">梓喵</a></p>
 
     
       <p id="hitokoto"></p>
