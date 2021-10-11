@@ -114,7 +114,7 @@ define("./service-worker.js",['./workbox-903cc191'], function (workbox) { 'use s
     "revision": "9249bf43e88dd16b53fc8b924a8c74eb"
   }, {
     "url": "animate/index.html",
-    "revision": "9acfdd45bcd7dfafc4b38b3bda4a312d"
+    "revision": "69c17d6be59430d0d1cc150fff86aee7"
   }, {
     "url": "archives/2016/12/index.html",
     "revision": "d8572682e2f14a41d6f4f4e8b31a56d8"
@@ -258,13 +258,13 @@ define("./service-worker.js",['./workbox-903cc191'], function (workbox) { 'use s
     "revision": "a8d09578bad6c6236066485d7b31ce12"
   }, {
     "url": "messages/index.html",
-    "revision": "e2598887c1af3db30c19bd47ea158e8f"
+    "revision": "5a6628d68279077f3c6b61bdc6c8ccfe"
   }, {
     "url": "page/2/index.html",
     "revision": "eeb8406405895891d795b8bc50ad8e11"
   }, {
     "url": "posts/11941/index.html",
-    "revision": "41e6cee76aaa1665effce6ad47a7dad4"
+    "revision": "25a145f666d418ebe6308a497eef94bd"
   }, {
     "url": "posts/16108/index.html",
     "revision": "e5aa0569e63a24895f5504e15a4a8e4e"

@@ -141,20 +141,11 @@
 
 <h3 id="用-fdisk-为-SD-卡分区"><a href="#用-fdisk-为-SD-卡分区" class="headerlink" title="用 fdisk 为 SD 卡分区"></a>用 fdisk 为 SD 卡分区</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">fdisk /dev/mmcblkX<br></code></pre></td></tr></table></figure>
 
-<h2 id="进入-fdisk-通过以下操作进行分区"><a href="#进入-fdisk-通过以下操作进行分区" class="headerlink" title="进入 fdisk 通过以下操作进行分区"></a>进入 fdisk 通过以下操作进行分区</h2><ul>
-<li><ol>
+<h2 id="进入-fdisk-通过以下操作进行分区"><a href="#进入-fdisk-通过以下操作进行分区" class="headerlink" title="进入 fdisk 通过以下操作进行分区"></a>进入 fdisk 通过以下操作进行分区</h2><ol>
 <li>按<code>o</code>键，删除 SD 卡的所有分区。</li>
-</ol>
-</li>
-<li><ol start="2">
 <li>现在先按<code>n</code>键，然后按<code>p</code>键，设置第一个分区， 第一个扇区设置为<code>2048</code>，后面的保持默认，一路按回车键。</li>
-</ol>
-</li>
-<li><ol start="3">
 <li>最后按<code>w</code>键保存分区。</li>
 </ol>
-</li>
-</ul>
 <h2 id="创建-ext4-格式分区"><a href="#创建-ext4-格式分区" class="headerlink" title="创建 ext4 格式分区"></a>创建 ext4 格式分区</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">mkfs.ext4 /dev/mmcblkX<br></code></pre></td></tr></table></figure>
 
 <h2 id="挂载分区"><a href="#挂载分区" class="headerlink" title="挂载分区"></a>挂载分区</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">mkdir mnt<br>mount /dev/mmcblkX mnt<br></code></pre></td></tr></table></figure>
