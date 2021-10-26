@@ -6,7 +6,7 @@
   <link href="https://zimiao.moe/atom.xml" rel="self"/>
   
   <link href="https://zimiao.moe/"/>
-  <updated>2021-10-11T07:42:48.212Z</updated>
+  <updated>2021-10-26T09:17:34.114Z</updated>
   <id>https://zimiao.moe/</id>
   
   <author>
@@ -17,11 +17,33 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>OpenWRT 添加 4G/5G 模块支持</title>
+    <link href="https://zimiao.moe/posts/35234/"/>
+    <id>https://zimiao.moe/posts/35234/</id>
+    <published>2021-10-26T06:32:00.000Z</published>
+    <updated>2021-10-26T09:17:34.114Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;本人使用的是&lt;code&gt;SIMCom SIM8202G-M2&lt;/code&gt;5G模块测试&lt;code&gt;QMI&lt;/code&gt;和&lt;code&gt;RNDI</summary>
+      
+    
+    
+    
+    <category term="折腾" scheme="https://zimiao.moe/categories/%E6%8A%98%E8%85%BE/"/>
+    
+    
+    <category term="OpenWRT" scheme="https://zimiao.moe/tags/OpenWRT/"/>
+    
+  </entry>
+  
+  <entry>
     <title>搭建 Home Assistant 智能家居环境</title>
     <link href="https://zimiao.moe/posts/63258/"/>
     <id>https://zimiao.moe/posts/63258/</id>
     <published>2021-01-14T04:26:00.000Z</published>
-    <updated>2021-10-11T07:42:48.212Z</updated>
+    <updated>2021-10-26T09:17:34.114Z</updated>
     
     
       
@@ -45,7 +67,7 @@
     <link href="https://zimiao.moe/posts/38470/"/>
     <id>https://zimiao.moe/posts/38470/</id>
     <published>2020-05-17T09:14:30.000Z</published>
-    <updated>2021-10-11T07:42:48.212Z</updated>
+    <updated>2021-10-26T09:17:34.114Z</updated>
     
     
       
@@ -59,8 +81,6 @@
     <category term="折腾" scheme="https://zimiao.moe/categories/%E6%8A%98%E8%85%BE/"/>
     
     
-    <category term="折腾" scheme="https://zimiao.moe/tags/%E6%8A%98%E8%85%BE/"/>
-    
     <category term="Nintendo Switch" scheme="https://zimiao.moe/tags/Nintendo-Switch/"/>
     
   </entry>
@@ -70,7 +90,7 @@
     <link href="https://zimiao.moe/posts/46684/"/>
     <id>https://zimiao.moe/posts/46684/</id>
     <published>2019-10-07T04:51:00.000Z</published>
-    <updated>2021-10-11T07:42:48.212Z</updated>
+    <updated>2021-10-26T09:17:34.114Z</updated>
     
     
       
@@ -92,7 +112,7 @@
     <link href="https://zimiao.moe/posts/61260/"/>
     <id>https://zimiao.moe/posts/61260/</id>
     <published>2019-10-05T21:31:00.000Z</published>
-    <updated>2021-10-11T07:42:48.212Z</updated>
+    <updated>2021-10-26T09:17:34.114Z</updated>
     
     
       
@@ -114,7 +134,7 @@
     <link href="https://zimiao.moe/posts/53555/"/>
     <id>https://zimiao.moe/posts/53555/</id>
     <published>2019-04-26T07:00:00.000Z</published>
-    <updated>2021-10-11T07:42:48.212Z</updated>
+    <updated>2021-10-26T09:17:34.104Z</updated>
     
     
       
@@ -136,7 +156,7 @@
     <link href="https://zimiao.moe/posts/20593/"/>
     <id>https://zimiao.moe/posts/20593/</id>
     <published>2019-02-12T17:21:00.000Z</published>
-    <updated>2021-10-11T07:42:48.212Z</updated>
+    <updated>2021-10-26T09:17:34.114Z</updated>
     
     
       
@@ -167,7 +187,7 @@
     <link href="https://zimiao.moe/posts/61570/"/>
     <id>https://zimiao.moe/posts/61570/</id>
     <published>2018-02-12T07:58:00.000Z</published>
-    <updated>2021-10-11T07:42:48.212Z</updated>
+    <updated>2021-10-26T09:17:34.104Z</updated>
     
     
       
@@ -189,7 +209,7 @@
     <link href="https://zimiao.moe/posts/44799/"/>
     <id>https://zimiao.moe/posts/44799/</id>
     <published>2017-12-23T18:24:00.000Z</published>
-    <updated>2021-10-11T07:42:48.212Z</updated>
+    <updated>2021-10-26T09:17:34.114Z</updated>
     
     
       
@@ -211,7 +231,7 @@
     <link href="https://zimiao.moe/posts/7056/"/>
     <id>https://zimiao.moe/posts/7056/</id>
     <published>2017-10-08T12:04:00.000Z</published>
-    <updated>2021-10-11T07:42:48.212Z</updated>
+    <updated>2021-10-26T09:17:34.114Z</updated>
     
     
       
@@ -236,7 +256,7 @@
     <link href="https://zimiao.moe/posts/51311/"/>
     <id>https://zimiao.moe/posts/51311/</id>
     <published>2017-05-28T17:40:00.000Z</published>
-    <updated>2021-10-11T07:42:48.212Z</updated>
+    <updated>2021-10-26T09:17:34.114Z</updated>
     
     
       
@@ -258,7 +278,7 @@
     <link href="https://zimiao.moe/posts/18671/"/>
     <id>https://zimiao.moe/posts/18671/</id>
     <published>2017-05-25T16:33:00.000Z</published>
-    <updated>2021-10-11T07:42:48.212Z</updated>
+    <updated>2021-10-26T09:17:34.114Z</updated>
     
     
       
@@ -281,7 +301,7 @@
     <link href="https://zimiao.moe/posts/38685/"/>
     <id>https://zimiao.moe/posts/38685/</id>
     <published>2017-05-25T04:52:00.000Z</published>
-    <updated>2021-10-11T07:42:48.212Z</updated>
+    <updated>2021-10-26T09:17:34.124Z</updated>
     
     
       
@@ -303,7 +323,7 @@
     <link href="https://zimiao.moe/posts/11941/"/>
     <id>https://zimiao.moe/posts/11941/</id>
     <published>2017-03-21T13:31:00.000Z</published>
-    <updated>2021-10-11T07:42:48.212Z</updated>
+    <updated>2021-10-26T09:17:34.114Z</updated>
     
     
       
@@ -326,7 +346,7 @@
     <link href="https://zimiao.moe/posts/16108/"/>
     <id>https://zimiao.moe/posts/16108/</id>
     <published>2016-12-04T02:42:00.000Z</published>
-    <updated>2021-10-11T07:42:48.212Z</updated>
+    <updated>2021-10-26T09:17:34.114Z</updated>
     
     
       

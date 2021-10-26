@@ -22,7 +22,7 @@
 
   
 
-  <title>标签 | 梓喵</title>
+  <title>OpenWRT 添加 4G/5G 模块支持 | 梓喵</title>
 
   
 
@@ -44,9 +44,9 @@
   <div class="root-container">
     
 <!-- header container -->
-<header class="header-container">
+<header class="header-container post">
   
-    <div class="post-image" style="background-image: url(https://zimiao.moe/images/cover/ewe515zybpwr0sn.jpg)"></div>
+    <div class="post-image" style="background-image: url(https://zimiao.moe/images/cover/C8qY84q4gVNyB6ML.jpg)"></div>
   
 
   <!-- navbar -->
@@ -96,36 +96,174 @@
 
   
   
-
-  
-  
     <div class="header-content">
-      <div class="post-text layout-block layout-padding">
-        <h1 class="title-wrap">标签</h1>
-        
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap">OpenWRT 添加 4G/5G 模块支持</h1>
+          <h2 class="title-sub-wrap">
+            <strong>梓喵</strong>
+            <span>发布于</span>
+            <time  class="article-date" datetime="2021-10-26T06:32:00.000Z" itemprop="datePublished">2021年10月26日</time>
+          </h2>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/categories/%E6%8A%98%E8%85%BE/">📒 折腾</a></li>
+  
+</ul>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/tags/OpenWRT/">🏷️ OpenWRT</a></li>
+  
+</ul>
+        </div>
       </div>
     </div>
+  
+
+  
   
   
 </header>
 
-    <!-- 分页(其他自定义页面) -->
+    <!-- 文章 -->
 
-<!-- 自定义页面 -->
-
+<!-- 文章内容 -->
 <div class="body-container">
   <article class="content-container layout-block post-container">
     <div class="article-info">
       
+      
+      
+      
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本人使用的是<code>SIMCom SIM8202G-M2</code>5G模块测试<code>QMI</code>和<code>RNDIS</code>模式，在内核版本<code>5.4.150</code>是已经支持<code>SIM820X-M2</code>无需修改内核</p>
+<h2 id="Openwrt-内核设置"><a href="#Openwrt-内核设置" class="headerlink" title="Openwrt 内核设置"></a>Openwrt 内核设置</h2><p>需要预先选择需要编译的设备，再设置内核</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">make kernel_menuconfig<br></code></pre></td></tr></table></figure>
+
+<p>选择以下选项</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">Device Drivers ---&gt;<br> [*] USB support ---&gt;<br>  &lt;*&gt; USB Modem (CDC ACM) support<br>  &lt;*&gt; USB Serial Converter support ---&gt;<br>   [*] USB Generic Serial Driver<br>   &lt;*&gt; USB Qualcomm Serial modem<br>   &lt;*&gt; USB driver <span class="hljs-keyword">for</span> GSM and CDMA modems<br> [*] Networking support ---&gt;<br>  &lt;*&gt; USB Network Adapters ---&gt;<br>   &lt;*&gt; Option USB High Speed Mobile Devices<br>   &lt;*&gt; Multi-purpose USB Networking Framework<br>    &lt;*&gt; USB-to-WWAN Driver <span class="hljs-keyword">for</span> Sierra Wireless modems<br>    &lt;*&gt; CDC Ethernet support (smart devices such as cable modems)<br></code></pre></td></tr></table></figure>
+
+<h2 id="Openwrt-软件包设置"><a href="#Openwrt-软件包设置" class="headerlink" title="Openwrt 软件包设置"></a>Openwrt 软件包设置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">make menuconfig<br></code></pre></td></tr></table></figure>
+
+<p>根据自己需求选择以下选项，可同时选择</p>
+<h3 id="RNDIS"><a href="#RNDIS" class="headerlink" title="RNDIS"></a>RNDIS</h3><p>软件包名</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">usb-modeswitch<br>kmod-usb-net-rndis<br></code></pre></td></tr></table></figure>
+
+<p>软件包所在位置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">Kernel modules ---&gt;<br> USB Support ---&gt;<br>  &lt;*&gt; kmod-usb2<br>  &lt;*&gt; kmod-usb3<br>  &lt;*&gt; kmod-usb-net<br>   &lt;*&gt; kmod-usb-net-rndis<br>Utilities ---&gt;<br> &lt;*&gt; usb-modeswitch<br></code></pre></td></tr></table></figure>
+
+<h3 id="QMI"><a href="#QMI" class="headerlink" title="QMI"></a>QMI</h3><p>软件包名</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">usb-modeswitch<br>kmod-mii<br>kmod-usb-net<br>kmod-usb-wdm<br>kmod-usb-net-qmi-wwan<br>uqmi<br></code></pre></td></tr></table></figure>
+
+<p>软件包所在位置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash">Kernel modules ---&gt;<br> USB Support ---&gt;<br>  &lt;*&gt; kmod-usb2<br>  &lt;*&gt; kmod-usb3<br>  &lt;*&gt; kmod-usb-net<br>   &lt;*&gt; kmod-usb-net<br>   &lt;*&gt; kmod-usb-wdm<br>   &lt;*&gt; kmod-usb-net-qmi-wwan<br> Network Devices ---&gt;<br>  &lt;*&gt; kmod-mii<br>Network ---&gt;<br> WWAN ---&gt;<br>  &lt;*&gt; uqmi<br>LuCI ---&gt;<br> 5. Protocols ---&gt;<br>  &lt;*&gt; luci-proto-qmi<br>Utilities ---&gt;<br> &lt;*&gt; usb-modeswitch<br></code></pre></td></tr></table></figure>
+
+<h3 id="NCM"><a href="#NCM" class="headerlink" title="NCM"></a>NCM</h3><p>NCM 模式暂时未测试，软件包设置来自 OpenWRT Wiki</p>
+<p>软件包名称</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">kmod-usb-serial<br>kmod-usb-serial-option<br>kmod-usb-serial-wwan<br></code></pre></td></tr></table></figure>
+
+<p>软件包所在位置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">Kernel modules ---&gt;<br> USB Support ---&gt;<br>  &lt;*&gt; kmod-usb2<br>  &lt;*&gt; kmod-usb3<br>  &lt;*&gt; kmod-usb-serial<br>   &lt;*&gt; kmod-usb-serial-option<br>   &lt;*&gt; kmod-usb-serial-wwan<br>LuCI ---&gt;<br> 5. Protocols ---&gt;<br>  &lt;*&gt; luci-proto-ncm<br></code></pre></td></tr></table></figure>
+
+<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p>跟正常编译 OpenWRT 步骤进行，这里不过多赘述</p>
+<h2 id="Luci-设置"><a href="#Luci-设置" class="headerlink" title="Luci 设置"></a>Luci 设置</h2><h3 id="RNDIS-设置"><a href="#RNDIS-设置" class="headerlink" title="RNDIS 设置"></a>RNDIS 设置</h3><p>需要先把模块设置成<code>RNIDS</code>模式，使用<code>AT</code>指令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">AT+CUSBCFG=usbid,1e0e,9011<br><span class="hljs-comment"># 设置接入点(电信ctnet/联通3gnet/移动cmnet) </span><br>AT+CGDCONT=1,<span class="hljs-string">&quot;ip&quot;</span>,<span class="hljs-string">&quot;3gnet&quot;</span><br><span class="hljs-comment"># 重启模块</span><br>AT+CFUN=1,1<br></code></pre></td></tr></table></figure>
+
+<p>在<code>OpenWRT</code>的系统是日志中找到以下信息，证明模块运行在<code>RNDIS</code>模式下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">rndis_host 1-1:1.0 usb0: register <span class="hljs-string">&#x27;rndis_host&#x27;</span> at usb-0000:00:14.0-1, RNDIS device, xx:xx:xx:xx:xx:xx<br></code></pre></td></tr></table></figure>
+
+<p>在<code>网络-接口</code>选项添加新接口</p>
+<p><img src="https://zimiao.pages.dev/35234/posts_35234_p0.png"></p>
+<p>使用<code>DHCP 客户端</code>协议，通常选择<code>以太网适配器: &quot;usbx&quot;</code></p>
+<p><img src="https://zimiao.pages.dev/35234/posts_35234_p1.png"></p>
+<p>在新建接口的<code>防火墙设置</code>中把接口放进<code>wan</code>里面，保存&amp;应用设置</p>
+<h3 id="QMI-设置"><a href="#QMI-设置" class="headerlink" title="QMI 设置"></a>QMI 设置</h3><p>模块默认是使用<code>qmi</code>模式，若不是可以使用以下<code>AT</code>指令切换</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">AT+CUSBCFG=usbid,1e0e,9001<br></code></pre></td></tr></table></figure>
+
+<p>在<code>OpenWRT</code>的系统是日志中找到以下信息，证明模块运行在<code>QMI</code>模式下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">qmi_wwan 1-1:1.5 wwan0: register <span class="hljs-string">&#x27;qmi_wwan&#x27;</span> at usb-xxxx:xx:xx.x-x, WWAN/QMI device, xx:xx:xx:xx:xx:xx<br></code></pre></td></tr></table></figure>
+
+<p>并且在<code>/dev</code>中找到<code>cdc-wdmx</code>，说明模块已经被识别到</p>
+<p>在<code>网络-接口</code>选项添加新接口</p>
+<p><img src="https://zimiao.pages.dev/35234/posts_35234_p2.png"></p>
+<p>使用<code>QMI 蜂窝</code>协议</p>
+<p><img src="https://zimiao.pages.dev/35234/posts_35234_p3.png"></p>
+<p><code>调制解调器节点</code>填写找到的<code>/dev/cdc-wdmx</code>，<code>APN</code>根据 SIM 卡的运营商填写，其他无需填写</p>
+<p><img src="https://zimiao.pages.dev/35234/posts_35234_p1.png"></p>
+<p>在新建接口的<code>防火墙设置</code>中把接口放进<code>wan</code>里面，保存&amp;应用设置<br>有时无法拨号，可以尝试通过结束<code>uqmi</code>进程<code>killall uqmi</code>，或者重启模块</p>
+<p>在概览网络处的<code>IPv4 WAN 状态</code>看到已经获取到 IP 说明已经能拨号成功了</p>
+<h3 id="NCM-设置"><a href="#NCM-设置" class="headerlink" title="NCM 设置"></a>NCM 设置</h3><p>手头暂时没支持的模块进行测试</p>
+<h2 id="参考来源"><a href="#参考来源" class="headerlink" title="参考来源"></a>参考来源</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://openwrt.org/docs/guide-user/network/wan/wwan/ltedongle">https://openwrt.org/docs/guide-user/network/wan/wwan/ltedongle</a></li>
+<li><a target="_blank" rel="noopener" href="https://openwrt.org/docs/guide-user/network/wan/wwan/ethernetoverusb_rndis">https://openwrt.org/docs/guide-user/network/wan/wwan/ethernetoverusb_rndis</a></li>
+<li><a target="_blank" rel="noopener" href="https://openwrt.org/docs/guide-user/network/wan/wwan/ethernetoverusb_ncm">https://openwrt.org/docs/guide-user/network/wan/wwan/ethernetoverusb_ncm</a></li>
+</ul>
+
       </section>
 
       
       
+        <nav class="article-nav">
+          
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+      <div class="card-cover" background-image-lazy data-img="https://zimiao.moe/images/cover/4YSsvyZBz7EX0By.jpg"></div>
+    
+    <div class="card-text">
+      
+        <a href="/posts/63258/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">搭建 Home Assistant 智能家居环境</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
+</div>
+          
+        </nav>
+      
 
-      
-      
+      <section class="page-message-container layout-padding">
+        
+
+
+  
+  
+
+  
+  
+
+  
+  
+    <div class="comments-container content-padding--primary soft-size--large soft-style--box">
+      <div id="waline"></div>
+    </div>
+    <script src="//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.noStyle.js"></script>
+    <script>
+      Waline({
+        el: '#waline',
+        serverURL: "https://waline.zimiao.org",
+        avatar: "",
+        visitor: true,
+        emoji: [
+          'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/alus',
+          'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba',
+          'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/weibo',
+          'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili',
+          'https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/bilibiliHotKey',
+          'https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/bilibili2233',
+          'https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/Snow-Miku',
+          'https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/Tsuri-me-ju_mimi'
+        ],
+        uploadImage: false,
+      });
+    </script>
+  
+
+
+      </section>
     </div>
     <div class="widget-info">
       <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
@@ -160,6 +298,20 @@
     </div>
   </div>
 </section>
+
+      
+<section class="widget-toc widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-toc" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M134.50666666 767.46666668H460.8c27.73333333 0 50.24000001 22.50666668 50.24000001 50.23999999v50.13333333c0 27.73333333-22.50666668 50.24000001-50.24000001 50.24000001H134.50666666c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.24000001v-50.13333333c0.10666668-27.73333333 22.50666668-50.24000001 50.24000001-50.24000001zM84.37333332 541.65333333h326.18666669c27.73333333 0 50.24000001 22.39999999 50.23999999 50.13333334v50.24000001c0 27.73333333-22.50666668 50.24000001-50.24000002 50.23999999H84.37333332c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.23999999v-50.24000001c0-27.73333333 22.50666668-50.13333334 50.24000001-50.13333334zM134.50666666 315.83999999H460.8c27.73333333 0 50.24000001 22.50666668 50.24000001 50.24000001v50.24000001c0 27.73333333-22.50666668 50.13333334-50.24000001 50.13333333H134.50666666c-27.73333333 0-50.24000001-22.39999999-50.23999999-50.13333333v-50.24000001c0.10666668-27.84000001 22.50666668-50.24000001 50.24000001-50.23999999zM209.81333332 89.91999999h326.18666671c27.73333333 0 50.24000001 22.39999999 50.23999997 50.13333335v50.23999999c0 27.73333333-22.50666668 50.24000001-50.24000001 50.24000001H209.81333332c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.24000001v-50.24000001c0-27.73333333 22.50666668-50.13333334 50.24000001-50.13333333zM692.05333333 623.36l274.66666669 176.00000002c23.36000001 14.93333333 30.08 45.97333334 15.14666666 69.33333332L954.77333334 910.93333333c-14.93333333 23.25333334-45.97333334 30.08-69.33333335 15.14666667l-274.66666666-176c-23.36000001-14.93333333-30.08-45.97333334-15.14666667-69.33333333l27.09333334-42.24000001c14.93333333-23.36000001 46.08000001-30.08 69.33333333-15.14666666z" fill="currentColor"></path>
+</svg>
+    <span>TOC</span>
+  </div>
+  <div class="widget-body">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Openwrt-%E5%86%85%E6%A0%B8%E8%AE%BE%E7%BD%AE"><span class="toc-number">2.</span> <span class="toc-text">Openwrt 内核设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Openwrt-%E8%BD%AF%E4%BB%B6%E5%8C%85%E8%AE%BE%E7%BD%AE"><span class="toc-number">3.</span> <span class="toc-text">Openwrt 软件包设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#RNDIS"><span class="toc-number">3.1.</span> <span class="toc-text">RNDIS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#QMI"><span class="toc-number">3.2.</span> <span class="toc-text">QMI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NCM"><span class="toc-number">3.3.</span> <span class="toc-text">NCM</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%AF%91"><span class="toc-number">4.</span> <span class="toc-text">编译</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Luci-%E8%AE%BE%E7%BD%AE"><span class="toc-number">5.</span> <span class="toc-text">Luci 设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#RNDIS-%E8%AE%BE%E7%BD%AE"><span class="toc-number">5.1.</span> <span class="toc-text">RNDIS 设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#QMI-%E8%AE%BE%E7%BD%AE"><span class="toc-number">5.2.</span> <span class="toc-text">QMI 设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NCM-%E8%AE%BE%E7%BD%AE"><span class="toc-number">5.3.</span> <span class="toc-text">NCM 设置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%9D%A5%E6%BA%90"><span class="toc-number">6.</span> <span class="toc-text">参考来源</span></a></li></ol>
+  </div>
+</section>
+
 
       
 
@@ -205,7 +357,6 @@
     </div>
   </article>
 </div>
-
 
     <!-- footer container -->
 <footer id="footer" class="footer">
