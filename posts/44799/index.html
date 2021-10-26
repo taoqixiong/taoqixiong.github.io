@@ -189,26 +189,35 @@
 
   
   
-    <div class="valine-container comments-container content-padding--primary soft-size--large soft-style--box">
-      <div id="valine_thread" class="valine-thread"></div>
-    </div>
-    <script type="text/javascript" src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-    <script type="text/javascript" src='//unpkg.com/valine/dist/Valine.min.js'></script>
-    <script type="text/javascript">
-      new Valine({
-        el: "#valine_thread",
-        appId: "wnAy21rFCs1EJ4M3Sa9MKmxI-MdYXbMMI",
-        appKey: "Acl8jtSbxm3Jk0x3OIqr115L",
-        avatar: "mm",
-        placeholder: "随便说点什么叭～",
-        notify: true,
-        visitor: true,
-        pageSize: 10,
-      });
-    </script>
+
+  
   
 
   
+  
+    <div class="comments-container content-padding--primary soft-size--large soft-style--box">
+      <div id="waline"></div>
+    </div>
+    <script src="//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.noStyle.js"></script>
+    <script>
+      Waline({
+        el: '#waline',
+        serverURL: "https://waline.zimiao.org",
+        avatar: "",
+        visitor: true,
+        emoji: [
+          'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/alus',
+          'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba',
+          'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/weibo',
+          'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili',
+          'https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/bilibiliHotKey',
+          'https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/bilibili2233',
+          'https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/Snow-Miku',
+          'https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/Tsuri-me-ju_mimi'
+        ],
+        uploadImage: false,
+      });
+    </script>
   
 
 
@@ -360,13 +369,16 @@
         document.addEventListener("visibilitychange", function() {
             if (document.hidden) {
                 document.title = "(つェ⊂) 我藏好了哦~ " + originTitle;
-                clearTimeout(titleTime);
+                //clearTimeout(titleTime);
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 1000);
             }
             else {
                 document.title = "(*´∇｀*) 被你发现啦~ " + originTitle;
                 titleTime = setTimeout(function() {
                     document.title = originTitle;
-                }, 2000);
+                }, 1000);
             }
         })
     </script>

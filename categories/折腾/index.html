@@ -464,13 +464,16 @@
         document.addEventListener("visibilitychange", function() {
             if (document.hidden) {
                 document.title = "(つェ⊂) 我藏好了哦~ " + originTitle;
-                clearTimeout(titleTime);
+                //clearTimeout(titleTime);
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 1000);
             }
             else {
                 document.title = "(*´∇｀*) 被你发现啦~ " + originTitle;
                 titleTime = setTimeout(function() {
                     document.title = originTitle;
-                }, 2000);
+                }, 1000);
             }
         })
     </script>
