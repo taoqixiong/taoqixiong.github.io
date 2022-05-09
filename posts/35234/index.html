@@ -173,9 +173,9 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">rndis_host 1-1:1.0 usb0: register <span class="hljs-string">&#x27;rndis_host&#x27;</span> at usb-0000:00:14.0-1, RNDIS device, xx:xx:xx:xx:xx:xx<br></code></pre></td></tr></table></figure>
 
 <p>在<code>网络-接口</code>选项添加新接口</p>
-<p><img src="https://zimiao.pages.dev/35234/posts_35234_p0.png"></p>
+<p><img src="https://pic.zimiao.moe/35234/posts_35234_p0.png"></p>
 <p>使用<code>DHCP 客户端</code>协议，通常选择<code>以太网适配器: &quot;usbx&quot;</code></p>
-<p><img src="https://zimiao.pages.dev/35234/posts_35234_p1.png"></p>
+<p><img src="https://pic.zimiao.moe/35234/posts_35234_p1.png"></p>
 <p>在新建接口的<code>防火墙设置</code>中把接口放进<code>wan</code>里面，保存&amp;应用设置</p>
 <h3 id="QMI-设置"><a href="#QMI-设置" class="headerlink" title="QMI 设置"></a>QMI 设置</h3><p>模块默认是使用<code>qmi</code>模式，若不是可以使用以下<code>AT</code>指令切换</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">AT+CUSBCFG=usbid,1e0e,9001<br></code></pre></td></tr></table></figure>
@@ -185,14 +185,19 @@
 
 <p>并且在<code>/dev</code>中找到<code>cdc-wdmx</code>，说明模块已经被识别到</p>
 <p>在<code>网络-接口</code>选项添加新接口</p>
-<p><img src="https://zimiao.pages.dev/35234/posts_35234_p2.png"></p>
+<p><img src="https://pic.zimiao.moe/35234/posts_35234_p2.png"></p>
 <p>使用<code>QMI 蜂窝</code>协议</p>
-<p><img src="https://zimiao.pages.dev/35234/posts_35234_p3.png"></p>
+<p><img src="https://pic.zimiao.moe/35234/posts_35234_p3.png"></p>
 <p><code>调制解调器节点</code>填写找到的<code>/dev/cdc-wdmx</code>，<code>APN</code>根据 SIM 卡的运营商填写，其他无需填写</p>
-<p><img src="https://zimiao.pages.dev/35234/posts_35234_p1.png"></p>
+<p><img src="https://pic.zimiao.moe/35234/posts_35234_p1.png"></p>
 <p>在新建接口的<code>防火墙设置</code>中把接口放进<code>wan</code>里面，保存&amp;应用设置<br>有时无法拨号，可以尝试通过结束<code>uqmi</code>进程<code>killall uqmi</code>，或者重启模块</p>
 <p>在概览网络处的<code>IPv4 WAN 状态</code>看到已经获取到 IP 说明已经能拨号成功了</p>
 <h3 id="NCM-设置"><a href="#NCM-设置" class="headerlink" title="NCM 设置"></a>NCM 设置</h3><p>手头暂时没支持的模块进行测试</p>
+<h2 id="其他-AT-指令"><a href="#其他-AT-指令" class="headerlink" title="其他 AT 指令"></a>其他 AT 指令</h2><p>这里为 SIM820x 的 AT 指令</p>
+<h3 id="重置模块"><a href="#重置模块" class="headerlink" title="重置模块"></a>重置模块</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">AT+CPOF<br></code></pre></td></tr></table></figure>
+
+<h3 id="重启模块"><a href="#重启模块" class="headerlink" title="重启模块"></a>重启模块</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">AT+CFUN=1,1<br></code></pre></td></tr></table></figure>
+
 <h2 id="参考来源"><a href="#参考来源" class="headerlink" title="参考来源"></a>参考来源</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://openwrt.org/docs/guide-user/network/wan/wwan/ltedongle">https://openwrt.org/docs/guide-user/network/wan/wwan/ltedongle</a></li>
 <li><a target="_blank" rel="noopener" href="https://openwrt.org/docs/guide-user/network/wan/wwan/ethernetoverusb_rndis">https://openwrt.org/docs/guide-user/network/wan/wwan/ethernetoverusb_rndis</a></li>
@@ -308,7 +313,7 @@
     <span>TOC</span>
   </div>
   <div class="widget-body">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Openwrt-%E5%86%85%E6%A0%B8%E8%AE%BE%E7%BD%AE"><span class="toc-number">2.</span> <span class="toc-text">Openwrt 内核设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Openwrt-%E8%BD%AF%E4%BB%B6%E5%8C%85%E8%AE%BE%E7%BD%AE"><span class="toc-number">3.</span> <span class="toc-text">Openwrt 软件包设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#RNDIS"><span class="toc-number">3.1.</span> <span class="toc-text">RNDIS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#QMI"><span class="toc-number">3.2.</span> <span class="toc-text">QMI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NCM"><span class="toc-number">3.3.</span> <span class="toc-text">NCM</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%AF%91"><span class="toc-number">4.</span> <span class="toc-text">编译</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Luci-%E8%AE%BE%E7%BD%AE"><span class="toc-number">5.</span> <span class="toc-text">Luci 设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#RNDIS-%E8%AE%BE%E7%BD%AE"><span class="toc-number">5.1.</span> <span class="toc-text">RNDIS 设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#QMI-%E8%AE%BE%E7%BD%AE"><span class="toc-number">5.2.</span> <span class="toc-text">QMI 设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NCM-%E8%AE%BE%E7%BD%AE"><span class="toc-number">5.3.</span> <span class="toc-text">NCM 设置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%9D%A5%E6%BA%90"><span class="toc-number">6.</span> <span class="toc-text">参考来源</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Openwrt-%E5%86%85%E6%A0%B8%E8%AE%BE%E7%BD%AE"><span class="toc-number">2.</span> <span class="toc-text">Openwrt 内核设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Openwrt-%E8%BD%AF%E4%BB%B6%E5%8C%85%E8%AE%BE%E7%BD%AE"><span class="toc-number">3.</span> <span class="toc-text">Openwrt 软件包设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#RNDIS"><span class="toc-number">3.1.</span> <span class="toc-text">RNDIS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#QMI"><span class="toc-number">3.2.</span> <span class="toc-text">QMI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NCM"><span class="toc-number">3.3.</span> <span class="toc-text">NCM</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%AF%91"><span class="toc-number">4.</span> <span class="toc-text">编译</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Luci-%E8%AE%BE%E7%BD%AE"><span class="toc-number">5.</span> <span class="toc-text">Luci 设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#RNDIS-%E8%AE%BE%E7%BD%AE"><span class="toc-number">5.1.</span> <span class="toc-text">RNDIS 设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#QMI-%E8%AE%BE%E7%BD%AE"><span class="toc-number">5.2.</span> <span class="toc-text">QMI 设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NCM-%E8%AE%BE%E7%BD%AE"><span class="toc-number">5.3.</span> <span class="toc-text">NCM 设置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96-AT-%E6%8C%87%E4%BB%A4"><span class="toc-number">6.</span> <span class="toc-text">其他 AT 指令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E7%BD%AE%E6%A8%A1%E5%9D%97"><span class="toc-number">6.1.</span> <span class="toc-text">重置模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E5%90%AF%E6%A8%A1%E5%9D%97"><span class="toc-number">6.2.</span> <span class="toc-text">重启模块</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%9D%A5%E6%BA%90"><span class="toc-number">7.</span> <span class="toc-text">参考来源</span></a></li></ol>
   </div>
 </section>
 
