@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,9 +31,11 @@
   
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@1.1.3/index.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/monokai.css">
-  
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@1.1.3/index.min.css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/typeface-source-code-pro@1.1.3/index.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/monokai.css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/highlightjs@9.16.2/styles/monokai.css">
+    
 
   
 <link rel="stylesheet" href="/css/style.css">
@@ -194,24 +196,24 @@
   
   
     <div class="comments-container content-padding--primary soft-size--large soft-style--box">
-      <div id="waline"></div>
+      <div id="waline_thread" class="waline-thread"></div>
     </div>
-    <script src="//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.noStyle.js"></script>
+    <script src="//unpkg.com/@waline/client@v2.4.0/dist/waline.js"></script>
     <script>
-      Waline({
-        el: '#waline',
-        serverURL: "https://waline.zimiao.org",
-        avatar: "",
+      Waline.init({
+        el: '#waline_thread',
+        serverURL: 'https://waline.zimiao.moe',
+        avatar: '',
         visitor: true,
         emoji: [
-          'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/alus',
-          'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba',
-          'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/weibo',
-          'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili',
-          'https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/bilibiliHotKey',
-          'https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/bilibili2233',
-          'https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/Snow-Miku',
-          'https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/Tsuri-me-ju_mimi'
+          'https://unpkg.com/@waline/emojis@1.0.1/alus',
+          'https://unpkg.com/@waline/emojis@1.0.1/tieba',
+          'https://unpkg.com/@waline/emojis@1.0.1/weibo',
+          'https://unpkg.com/@waline/emojis@1.0.1/bilibili',
+          'https://valine-emoji.bili33.top/bilibiliHotKey',
+          'https://valine-emoji.bili33.top/bilibili2233',
+          'https://valine-emoji.bili33.top/Snow-Miku',
+          'https://valine-emoji.bili33.top/Tsuri-me-ju_mimi'
         ],
         uploadImage: false,
       });
