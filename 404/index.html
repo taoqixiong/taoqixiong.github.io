@@ -423,11 +423,11 @@
       if (window.location.hostname === "localhost" || window.location.hostname.startsWith("192.168")) {
         return console.log("本地调试");
       }
-      var um = document.createElement("script");
-      um.src = "https://static.cloudflareinsights.com/beacon.min.js"
-      um.setAttribute("data-cf-beacon", '{"token": "c44bd4dcb7ac40e6b2d76815c00f5dfe"}');
+      var cf = document.createElement("script");
+      cf.src = "https://static.cloudflareinsights.com/beacon.min.js"
+      cf.setAttribute("data-cf-beacon", '{"token": "c44bd4dcb7ac40e6b2d76815c00f5dfe"}');
       var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(um, s);
+      s.parentNode.insertBefore(cf, s);
     })();
   </script>
 
