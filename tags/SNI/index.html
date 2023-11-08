@@ -8,7 +8,7 @@
   <link rel="apple-touch-icon" href="/icons-192.png">
   <link rel="manifest" href="/manifest.json">
   
-  <meta name="generator" content="Hexo 5.4.0">
+  <meta name="generator" content="Hexo 6.3.0">
 
   
 
@@ -30,12 +30,16 @@
     <link rel="shortcut icon" href="/favicon.ico">
   
 
+  <!--mathjax latex数学公式显示支持-->
   
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@1.1.3/index.min.css"> -->
-    <link rel="stylesheet" href="https://unpkg.com/typeface-source-code-pro@1.1.3/index.css">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/monokai.css"> -->
-    <link rel="stylesheet" href="https://unpkg.com/highlightjs@9.16.2/styles/monokai.css">
-    
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@1.1.13/index.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/monokai.min.css">
+  
+
+  
 
   
 <link rel="stylesheet" href="/css/style.css">
@@ -48,7 +52,7 @@
 <!-- header container -->
 <header class="header-container">
   
-    <div class="post-image" style="background-image: url(https://zimiao.moe/images/cover/YcAdLBU43hJ6Xxs.jpg)"></div>
+    <div class="post-image" style="background-image: url(https://pic.zimiao.moe/cover/YcAdLBU43hJ6Xxs.jpg)"></div>
   
 
   <!-- navbar -->
@@ -58,7 +62,7 @@
     <div class="navbar-logo">
       <a href="/">
         
-          <img src="https://i.loli.net/2020/03/13/l6eKWdz5yZEfAOp.png" alt="梓喵" />
+          梓喵
         
       </a>
     </div>
@@ -131,8 +135,14 @@
             
             <div class="card-text--row">
               <span>发布于</span>
-              <time  class="" datetime="2017-10-08T20:04:00.000Z" itemprop="datePublished">2017年10月08日</time>
+              <time  class="article-date" datetime="2017-10-08T20:04:00.000Z" itemprop="datePublished">2017年10月08日</time>
             </div>
+            
+              <div class="last-time">
+                <span>更新于</span>
+                <time  class="article-updated" datetime="2023-11-08T09:00:37.516Z" itemprop="dateUpdated">2023年11月08日</time>
+              </div>
+            
             <ul class="wrap-list dark">
   
     <li><a href="/categories/%E6%8A%98%E8%85%BE/">📒 折腾</a></li>
@@ -201,7 +211,7 @@
       
     </div>
      
-    <p>&copy; 2022 <a href="/" target="_blank">梓喵</a></p>
+    <p>&copy; 2023 <a href="/" target="_blank">梓喵</a></p>
 
     
 
@@ -252,6 +262,62 @@
 <!-- dplayer -->
 
 
+<!-- copy button  -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+<!-- https://clipboardjs.com/ -->
+
+
+<script type="text/javascript">
+	(function () {
+		function getCodeType (elem) {
+			const classs = Array.from(elem.classList.values());
+			if (classs && classs.length > 1) {
+				return classs[1];
+			}
+			return "plain";
+		}
+
+		window.addEventListener("DOMContentLoaded", () => {
+			const copyBtnClass = "copy-btn";
+			//  instantiate clipboardjs 
+			const clipboard = new ClipboardJS('.' + copyBtnClass);
+
+			clipboard.on('success', function (e) {
+				console.info('Action:', e.action);
+				console.info('Text:', e.text);
+				console.info('Trigger:', e.trigger);
+				if (e.trigger) {
+					e.trigger.classList.add("copied");
+					setTimeout(() => {
+						e.trigger.classList.remove("copied");
+					}, 3000);
+				}
+				e.clearSelection();
+			});
+
+			clipboard.on('error', function (e) {
+				console.error('Action:', e.action);
+				console.error('Trigger:', e.trigger);
+			});
+
+			document.querySelectorAll('figure.highlight').forEach((elem) => {
+				const codeContent = elem.querySelector("td.code");
+				const copyButton = document.createElement('button');
+				copyButton.setAttribute("class", copyBtnClass);
+				copyButton.setAttribute("title", "Copy Code");
+				copyButton.setAttribute("data-clipboard-text", codeContent.innerText);
+				elem.insertBefore(copyButton, elem.children[0]);
+			});
+		})
+	})();
+</script>
+
+
+
+
+
+
 
 
   
@@ -292,6 +358,7 @@
 
 
 
+
   <!-- Umami Analytics START -->
   <script>
     (function() {
@@ -299,12 +366,13 @@
         return console.log("本地调试");
       }
       var um = document.createElement("script");
-      um.src = "https://umami.zimiao.moe/azunyan.js"
-      um.setAttribute("data-website-id", "a2b25f74-424e-4cf8-9ef0-12cbf8cd5389");
+      um.src = ""
+      um.setAttribute("data-website-id", "");
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(um, s);
     })();
   </script>
+
 
 
   <!-- Cloudflare Analytics START -->

@@ -8,7 +8,7 @@
   <link rel="apple-touch-icon" href="/icons-192.png">
   <link rel="manifest" href="/manifest.json">
   
-  <meta name="generator" content="Hexo 5.4.0">
+  <meta name="generator" content="Hexo 6.3.0">
 
   
 
@@ -30,12 +30,16 @@
     <link rel="shortcut icon" href="/favicon.ico">
   
 
+  <!--mathjax latex数学公式显示支持-->
   
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@1.1.3/index.min.css"> -->
-    <link rel="stylesheet" href="https://unpkg.com/typeface-source-code-pro@1.1.3/index.css">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/monokai.css"> -->
-    <link rel="stylesheet" href="https://unpkg.com/highlightjs@9.16.2/styles/monokai.css">
-    
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@1.1.13/index.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/monokai.min.css">
+  
+
+  
 
   
 <link rel="stylesheet" href="/css/style.css">
@@ -58,7 +62,7 @@
     <div class="navbar-logo">
       <a href="/">
         
-          <img src="https://i.loli.net/2020/03/13/l6eKWdz5yZEfAOp.png" alt="梓喵" />
+          梓喵
         
       </a>
     </div>
@@ -107,6 +111,13 @@
             <span>发布于</span>
             <time  class="article-date" datetime="2021-10-26T14:32:00.000Z" itemprop="datePublished">2021年10月26日</time>
           </h2>
+          
+            <h2 class="last-time">
+              <span>最后更新于</span>
+              <time  class="article-updated" datetime="2023-11-08T09:00:37.516Z" itemprop="dateUpdated">2023年11月08日</time>
+            </h2>
+          
+          
           <ul class="wrap-list dark">
   
     <li><a href="/categories/%E6%8A%98%E8%85%BE/">📒 折腾</a></li>
@@ -140,49 +151,49 @@
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本人使用的是<code>SIMCom SIM8202G-M2</code>5G模块测试<code>QMI</code>和<code>RNDIS</code>模式，在内核版本<code>5.4.150</code>是已经支持<code>SIM820X-M2</code>无需修改内核</p>
 <h2 id="Openwrt-内核设置"><a href="#Openwrt-内核设置" class="headerlink" title="Openwrt 内核设置"></a>Openwrt 内核设置</h2><p>需要预先选择需要编译的设备，再设置内核</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">make kernel_menuconfig<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make kernel_menuconfig</span><br></pre></td></tr></table></figure>
 
 <p>选择以下选项</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">Device Drivers ---&gt;<br> [*] USB support ---&gt;<br>  &lt;*&gt; USB Modem (CDC ACM) support<br>  &lt;*&gt; USB Serial Converter support ---&gt;<br>   [*] USB Generic Serial Driver<br>   &lt;*&gt; USB Qualcomm Serial modem<br>   &lt;*&gt; USB driver <span class="hljs-keyword">for</span> GSM and CDMA modems<br> [*] Network device support ---&gt;<br>  &lt;*&gt; USB Network Adapters ---&gt;<br>   &lt;*&gt; Option USB High Speed Mobile Devices<br>   &lt;*&gt; Multi-purpose USB Networking Framework<br>    &lt;*&gt; USB-to-WWAN Driver <span class="hljs-keyword">for</span> Sierra Wireless modems<br>    &lt;*&gt; CDC Ethernet support (smart devices such as cable modems)<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Device Drivers ---&gt;</span><br><span class="line"> [*] USB support ---&gt;</span><br><span class="line">  &lt;*&gt; USB Modem (CDC ACM) support</span><br><span class="line">  &lt;*&gt; USB Serial Converter support ---&gt;</span><br><span class="line">   [*] USB Generic Serial Driver</span><br><span class="line">   &lt;*&gt; USB Qualcomm Serial modem</span><br><span class="line">   &lt;*&gt; USB driver <span class="keyword">for</span> GSM and CDMA modems</span><br><span class="line"> [*] Network device support ---&gt;</span><br><span class="line">  &lt;*&gt; USB Network Adapters ---&gt;</span><br><span class="line">   &lt;*&gt; Option USB High Speed Mobile Devices</span><br><span class="line">   &lt;*&gt; Multi-purpose USB Networking Framework</span><br><span class="line">    &lt;*&gt; USB-to-WWAN Driver <span class="keyword">for</span> Sierra Wireless modems</span><br><span class="line">    &lt;*&gt; CDC Ethernet support (smart devices such as cable modems)</span><br></pre></td></tr></table></figure>
 
-<h2 id="Openwrt-软件包设置"><a href="#Openwrt-软件包设置" class="headerlink" title="Openwrt 软件包设置"></a>Openwrt 软件包设置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">make menuconfig<br></code></pre></td></tr></table></figure>
+<h2 id="Openwrt-软件包设置"><a href="#Openwrt-软件包设置" class="headerlink" title="Openwrt 软件包设置"></a>Openwrt 软件包设置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make menuconfig</span><br></pre></td></tr></table></figure>
 
 <p>根据自己需求选择以下选项，可同时选择</p>
 <h3 id="RNDIS"><a href="#RNDIS" class="headerlink" title="RNDIS"></a>RNDIS</h3><p>软件包名</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">usb-modeswitch<br>kmod-usb-net-rndis<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">usb-modeswitch</span><br><span class="line">kmod-usb-net-rndis</span><br></pre></td></tr></table></figure>
 
 <p>软件包所在位置</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">Kernel modules ---&gt;<br> USB Support ---&gt;<br>  &lt;*&gt; kmod-usb2<br>  &lt;*&gt; kmod-usb3<br>  &lt;*&gt; kmod-usb-net<br>   &lt;*&gt; kmod-usb-net-rndis<br>Utilities ---&gt;<br> &lt;*&gt; usb-modeswitch<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Kernel modules ---&gt;</span><br><span class="line"> USB Support ---&gt;</span><br><span class="line">  &lt;*&gt; kmod-usb2</span><br><span class="line">  &lt;*&gt; kmod-usb3</span><br><span class="line">  &lt;*&gt; kmod-usb-net</span><br><span class="line">   &lt;*&gt; kmod-usb-net-rndis</span><br><span class="line">Utilities ---&gt;</span><br><span class="line"> &lt;*&gt; usb-modeswitch</span><br></pre></td></tr></table></figure>
 
 <h3 id="QMI"><a href="#QMI" class="headerlink" title="QMI"></a>QMI</h3><p>软件包名</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">usb-modeswitch<br>kmod-mii<br>kmod-usb-net<br>kmod-usb-wdm<br>kmod-usb-net-qmi-wwan<br>uqmi<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">usb-modeswitch</span><br><span class="line">kmod-mii</span><br><span class="line">kmod-usb-net</span><br><span class="line">kmod-usb-wdm</span><br><span class="line">kmod-usb-net-qmi-wwan</span><br><span class="line">uqmi</span><br></pre></td></tr></table></figure>
 
 <p>软件包所在位置</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash">Kernel modules ---&gt;<br> USB Support ---&gt;<br>  &lt;*&gt; kmod-usb2<br>  &lt;*&gt; kmod-usb3<br>  &lt;*&gt; kmod-usb-net<br>   &lt;*&gt; kmod-usb-net<br>   &lt;*&gt; kmod-usb-wdm<br>   &lt;*&gt; kmod-usb-net-qmi-wwan<br> Network Devices ---&gt;<br>  &lt;*&gt; kmod-mii<br>Network ---&gt;<br> WWAN ---&gt;<br>  &lt;*&gt; uqmi<br>LuCI ---&gt;<br> 5. Protocols ---&gt;<br>  &lt;*&gt; luci-proto-qmi<br>Utilities ---&gt;<br> &lt;*&gt; usb-modeswitch<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Kernel modules ---&gt;</span><br><span class="line"> USB Support ---&gt;</span><br><span class="line">  &lt;*&gt; kmod-usb2</span><br><span class="line">  &lt;*&gt; kmod-usb3</span><br><span class="line">  &lt;*&gt; kmod-usb-net</span><br><span class="line">   &lt;*&gt; kmod-usb-net</span><br><span class="line">   &lt;*&gt; kmod-usb-wdm</span><br><span class="line">   &lt;*&gt; kmod-usb-net-qmi-wwan</span><br><span class="line"> Network Devices ---&gt;</span><br><span class="line">  &lt;*&gt; kmod-mii</span><br><span class="line">Network ---&gt;</span><br><span class="line"> WWAN ---&gt;</span><br><span class="line">  &lt;*&gt; uqmi</span><br><span class="line">LuCI ---&gt;</span><br><span class="line"> 5. Protocols ---&gt;</span><br><span class="line">  &lt;*&gt; luci-proto-qmi</span><br><span class="line">Utilities ---&gt;</span><br><span class="line"> &lt;*&gt; usb-modeswitch</span><br></pre></td></tr></table></figure>
 
 <h3 id="NCM"><a href="#NCM" class="headerlink" title="NCM"></a>NCM</h3><p>NCM 模式暂时未测试，软件包设置来自 OpenWRT Wiki</p>
 <p>软件包名称</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">kmod-usb-serial<br>kmod-usb-serial-option<br>kmod-usb-serial-wwan<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">kmod-usb-serial</span><br><span class="line">kmod-usb-serial-option</span><br><span class="line">kmod-usb-serial-wwan</span><br></pre></td></tr></table></figure>
 
 <p>软件包所在位置</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">Kernel modules ---&gt;<br> USB Support ---&gt;<br>  &lt;*&gt; kmod-usb2<br>  &lt;*&gt; kmod-usb3<br>  &lt;*&gt; kmod-usb-serial<br>   &lt;*&gt; kmod-usb-serial-option<br>   &lt;*&gt; kmod-usb-serial-wwan<br>LuCI ---&gt;<br> 5. Protocols ---&gt;<br>  &lt;*&gt; luci-proto-ncm<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Kernel modules ---&gt;</span><br><span class="line"> USB Support ---&gt;</span><br><span class="line">  &lt;*&gt; kmod-usb2</span><br><span class="line">  &lt;*&gt; kmod-usb3</span><br><span class="line">  &lt;*&gt; kmod-usb-serial</span><br><span class="line">   &lt;*&gt; kmod-usb-serial-option</span><br><span class="line">   &lt;*&gt; kmod-usb-serial-wwan</span><br><span class="line">LuCI ---&gt;</span><br><span class="line"> 5. Protocols ---&gt;</span><br><span class="line">  &lt;*&gt; luci-proto-ncm</span><br></pre></td></tr></table></figure>
 
 <h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p>跟正常编译 OpenWRT 步骤进行，这里不过多赘述</p>
 <h2 id="Luci-设置"><a href="#Luci-设置" class="headerlink" title="Luci 设置"></a>Luci 设置</h2><h3 id="AT-指令的使用方法"><a href="#AT-指令的使用方法" class="headerlink" title="AT 指令的使用方法"></a>AT 指令的使用方法</h3><p>AT 指令可以使用<code>minicom</code>来发送 AT 指令，也可以用<code>echo</code>发送指令</p>
 <p><code>minicom</code>软件包位置：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">Utilities ---&gt;<br> Terminal ---&gt;<br>  &lt;*&gt; minicom<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Utilities ---&gt;</span><br><span class="line"> Terminal ---&gt;</span><br><span class="line">  &lt;*&gt; minicom</span><br></pre></td></tr></table></figure>
 
 <p>使用<code>minicom</code>发送 AT 指令，<code>/dev/ttyUSBX</code>为模块接收 AT 指令的端口，直接在里面输入 AT 指令按回车发送<br>退出<code>minicom</code>先按<code>Ctrl+A</code>后按<code>Q</code>退出软件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">minicom -D /dev/ttyUSBX<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">minicom -D /dev/ttyUSBX</span><br></pre></td></tr></table></figure>
 
 <p>使用<code>echo</code>发送 AT 指令，在指令末尾需加上<code>\n\r</code>，<code>/dev/ttyUSBX</code>为模块接收 AT 指令的端口，每条指令需间隔1s发送</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;at\n\r&quot;</span>&gt;/dev/ttyUSBX<br>sleep 1<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;at\n\r&quot;</span>&gt;/dev/ttyUSBX</span><br><span class="line"><span class="built_in">sleep</span> 1</span><br></pre></td></tr></table></figure>
 
 <h3 id="RNDIS-设置"><a href="#RNDIS-设置" class="headerlink" title="RNDIS 设置"></a>RNDIS 设置</h3><p>需要先把模块设置成<code>RNIDS</code>模式，使用<code>AT</code>指令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">AT+CUSBCFG=usbid,1e0e,9011<br><span class="hljs-comment"># 设置接入点(电信ctnet/联通3gnet/移动cmnet) </span><br>AT+CGDCONT=1,<span class="hljs-string">&quot;ip&quot;</span>,<span class="hljs-string">&quot;3gnet&quot;</span><br><span class="hljs-comment"># 重启模块</span><br>AT+CFUN=1,1<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">AT+CUSBCFG=usbid,1e0e,9011</span><br><span class="line"><span class="comment"># 设置接入点(电信ctnet/联通3gnet/移动cmnet) </span></span><br><span class="line">AT+CGDCONT=1,<span class="string">&quot;ip&quot;</span>,<span class="string">&quot;3gnet&quot;</span></span><br><span class="line"><span class="comment"># 重启模块</span></span><br><span class="line">AT+CFUN=1,1</span><br></pre></td></tr></table></figure>
 
 <p>在<code>OpenWRT</code>的系统是日志中找到以下信息，证明模块运行在<code>RNDIS</code>模式下</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">rndis_host 1-1:1.0 usb0: register <span class="hljs-string">&#x27;rndis_host&#x27;</span> at usb-0000:00:14.0-1, RNDIS device, xx:xx:xx:xx:xx:xx<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rndis_host 1-1:1.0 usb0: register <span class="string">&#x27;rndis_host&#x27;</span> at usb-0000:00:14.0-1, RNDIS device, xx:xx:xx:xx:xx:xx</span><br></pre></td></tr></table></figure>
 
 <p>在<code>网络-接口</code>选项添加新接口</p>
 <p><img src="https://pic.zimiao.moe/35234/posts_35234_p0.png"></p>
@@ -190,10 +201,10 @@
 <p><img src="https://pic.zimiao.moe/35234/posts_35234_p1.png"></p>
 <p>在新建接口的<code>防火墙设置</code>中把接口放进<code>wan</code>里面，保存&amp;应用设置</p>
 <h3 id="QMI-设置"><a href="#QMI-设置" class="headerlink" title="QMI 设置"></a>QMI 设置</h3><p>模块默认是使用<code>qmi</code>模式，若不是可以使用以下<code>AT</code>指令切换</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">AT+CUSBCFG=usbid,1e0e,9001<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AT+CUSBCFG=usbid,1e0e,9001</span><br></pre></td></tr></table></figure>
 
 <p>在<code>OpenWRT</code>的系统是日志中找到以下信息，证明模块运行在<code>QMI</code>模式下</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">qmi_wwan 1-1:1.5 wwan0: register <span class="hljs-string">&#x27;qmi_wwan&#x27;</span> at usb-xxxx:xx:xx.x-x, WWAN/QMI device, xx:xx:xx:xx:xx:xx<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">qmi_wwan 1-1:1.5 wwan0: register <span class="string">&#x27;qmi_wwan&#x27;</span> at usb-xxxx:xx:xx.x-x, WWAN/QMI device, xx:xx:xx:xx:xx:xx</span><br></pre></td></tr></table></figure>
 
 <p>并且在<code>/dev</code>中找到<code>cdc-wdmx</code>，说明模块已经被识别到</p>
 <p>在<code>网络-接口</code>选项添加新接口</p>
@@ -206,20 +217,20 @@
 <p>在概览网络处的<code>IPv4 WAN 状态</code>看到已经获取到 IP 说明已经能拨号成功了</p>
 <h3 id="NCM-设置"><a href="#NCM-设置" class="headerlink" title="NCM 设置"></a>NCM 设置</h3><p>手头暂时没支持的模块进行测试</p>
 <h2 id="其他-AT-指令"><a href="#其他-AT-指令" class="headerlink" title="其他 AT 指令"></a>其他 AT 指令</h2><p>正常步骤不需要使用这里的指令，可以跳过<br>这里为 SIM820x 的 AT 指令，不同模块使用的 AT 指令会有所不同，建议查看模块说明书</p>
-<h3 id="重置模块"><a href="#重置模块" class="headerlink" title="重置模块"></a>重置模块</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">AT+CPOF<br></code></pre></td></tr></table></figure>
+<h3 id="重置模块"><a href="#重置模块" class="headerlink" title="重置模块"></a>重置模块</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AT+CPOF</span><br></pre></td></tr></table></figure>
 
-<h3 id="重启模块"><a href="#重启模块" class="headerlink" title="重启模块"></a>重启模块</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">AT+CFUN=1,1<br></code></pre></td></tr></table></figure>
+<h3 id="重启模块"><a href="#重启模块" class="headerlink" title="重启模块"></a>重启模块</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AT+CFUN=1,1</span><br></pre></td></tr></table></figure>
 
 <h2 id="开启-IPV6-支持"><a href="#开启-IPV6-支持" class="headerlink" title="开启 IPV6 支持"></a>开启 IPV6 支持</h2><p>这里是选择性开启，固件默认是关闭 IPV6 ，暂时只测试了 QMI 模式下获取 IPV6</p>
 <p>在编译的时候添加软件包<code>ipv6helper</code></p>
 <p><code>ipv6helper</code>软件包位置</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">Extra packages  ---&gt;<br> &lt;*&gt; ipv6helper<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Extra packages  ---&gt;</span><br><span class="line"> &lt;*&gt; ipv6helper</span><br></pre></td></tr></table></figure>
 
 <h3 id="QMI-开启-IPV6"><a href="#QMI-开启-IPV6" class="headerlink" title="QMI 开启 IPV6"></a>QMI 开启 IPV6</h3><p>在 <code>/etc/config/network</code> 网络配置文件中找到模块对应的接口，在里面添加上</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs conf">option pdptype &#39;IPV4V6&#39;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">option pdptype &#x27;IPV4V6&#x27;</span><br></pre></td></tr></table></figure>
 
 <p>重启网络</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">/etc/init.d/network restart<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/network restart</span><br></pre></td></tr></table></figure>
 
 <p>然后在 LEDE 的首页能看到<code>IPv6 WAN 状态</code>已经获取到 IPV6 地址</p>
 <h2 id="参考来源"><a href="#参考来源" class="headerlink" title="参考来源"></a>参考来源</h2><ul>
@@ -271,24 +282,25 @@
     <div class="comments-container content-padding--primary soft-size--large soft-style--box">
       <div id="waline_thread" class="waline-thread"></div>
     </div>
-    <script src="//unpkg.com/@waline/client@v2.4.0/dist/waline.js"></script>
-    <script>
-      Waline.init({
+    <script type="module">
+      import { init } from '//unpkg.com/@waline/client@v2/dist/waline.mjs';
+      init({
         el: '#waline_thread',
         serverURL: 'https://waline.zimiao.moe',
         avatar: '',
         visitor: true,
         emoji: [
-          'https://unpkg.com/@waline/emojis@1.0.1/alus',
-          'https://unpkg.com/@waline/emojis@1.0.1/tieba',
-          'https://unpkg.com/@waline/emojis@1.0.1/weibo',
-          'https://unpkg.com/@waline/emojis@1.0.1/bilibili',
+          'https://unpkg.com/@waline/emojis@1.2.0/alus',
+          'https://unpkg.com/@waline/emojis@1.2.0/tieba',
+          'https://unpkg.com/@waline/emojis@1.2.0/weibo',
+          'https://unpkg.com/@waline/emojis@1.2.0/bilibili',
           'https://valine-emoji.bili33.top/bilibiliHotKey',
           'https://valine-emoji.bili33.top/bilibili2233',
           'https://valine-emoji.bili33.top/Snow-Miku',
           'https://valine-emoji.bili33.top/Tsuri-me-ju_mimi'
         ],
         uploadImage: false,
+        search: false,
       });
     </script>
   
@@ -435,7 +447,7 @@
       
     </div>
      
-    <p>&copy; 2022 <a href="/" target="_blank">梓喵</a></p>
+    <p>&copy; 2023 <a href="/" target="_blank">梓喵</a></p>
 
     
 
@@ -486,6 +498,62 @@
 <!-- dplayer -->
 
 
+<!-- copy button  -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+<!-- https://clipboardjs.com/ -->
+
+
+<script type="text/javascript">
+	(function () {
+		function getCodeType (elem) {
+			const classs = Array.from(elem.classList.values());
+			if (classs && classs.length > 1) {
+				return classs[1];
+			}
+			return "plain";
+		}
+
+		window.addEventListener("DOMContentLoaded", () => {
+			const copyBtnClass = "copy-btn";
+			//  instantiate clipboardjs 
+			const clipboard = new ClipboardJS('.' + copyBtnClass);
+
+			clipboard.on('success', function (e) {
+				console.info('Action:', e.action);
+				console.info('Text:', e.text);
+				console.info('Trigger:', e.trigger);
+				if (e.trigger) {
+					e.trigger.classList.add("copied");
+					setTimeout(() => {
+						e.trigger.classList.remove("copied");
+					}, 3000);
+				}
+				e.clearSelection();
+			});
+
+			clipboard.on('error', function (e) {
+				console.error('Action:', e.action);
+				console.error('Trigger:', e.trigger);
+			});
+
+			document.querySelectorAll('figure.highlight').forEach((elem) => {
+				const codeContent = elem.querySelector("td.code");
+				const copyButton = document.createElement('button');
+				copyButton.setAttribute("class", copyBtnClass);
+				copyButton.setAttribute("title", "Copy Code");
+				copyButton.setAttribute("data-clipboard-text", codeContent.innerText);
+				elem.insertBefore(copyButton, elem.children[0]);
+			});
+		})
+	})();
+</script>
+
+
+
+
+
+
 
 
   
@@ -526,6 +594,7 @@
 
 
 
+
   <!-- Umami Analytics START -->
   <script>
     (function() {
@@ -533,12 +602,13 @@
         return console.log("本地调试");
       }
       var um = document.createElement("script");
-      um.src = "https://umami.zimiao.moe/azunyan.js"
-      um.setAttribute("data-website-id", "a2b25f74-424e-4cf8-9ef0-12cbf8cd5389");
+      um.src = ""
+      um.setAttribute("data-website-id", "");
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(um, s);
     })();
   </script>
+
 
 
   <!-- Cloudflare Analytics START -->

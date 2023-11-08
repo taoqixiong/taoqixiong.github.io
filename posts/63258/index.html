@@ -8,7 +8,7 @@
   <link rel="apple-touch-icon" href="/icons-192.png">
   <link rel="manifest" href="/manifest.json">
   
-  <meta name="generator" content="Hexo 5.4.0">
+  <meta name="generator" content="Hexo 6.3.0">
 
   
 
@@ -30,12 +30,16 @@
     <link rel="shortcut icon" href="/favicon.ico">
   
 
+  <!--mathjax latex数学公式显示支持-->
   
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@1.1.3/index.min.css"> -->
-    <link rel="stylesheet" href="https://unpkg.com/typeface-source-code-pro@1.1.3/index.css">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/monokai.css"> -->
-    <link rel="stylesheet" href="https://unpkg.com/highlightjs@9.16.2/styles/monokai.css">
-    
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@1.1.13/index.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/monokai.min.css">
+  
+
+  
 
   
 <link rel="stylesheet" href="/css/style.css">
@@ -58,7 +62,7 @@
     <div class="navbar-logo">
       <a href="/">
         
-          <img src="https://i.loli.net/2020/03/13/l6eKWdz5yZEfAOp.png" alt="梓喵" />
+          梓喵
         
       </a>
     </div>
@@ -107,6 +111,13 @@
             <span>发布于</span>
             <time  class="article-date" datetime="2021-01-14T12:26:00.000Z" itemprop="datePublished">2021年01月14日</time>
           </h2>
+          
+            <h2 class="last-time">
+              <span>最后更新于</span>
+              <time  class="article-updated" datetime="2023-11-08T09:00:37.520Z" itemprop="dateUpdated">2023年11月08日</time>
+            </h2>
+          
+          
           <ul class="wrap-list dark">
   
     <li><a href="/categories/%E6%8A%98%E8%85%BE/">📒 折腾</a></li>
@@ -147,28 +158,28 @@
 <li><a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/fedora/">Fedora</a></li>
 </ul>
 <p>移除已安装的 Docker 相关组件，以及安装必要的组件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get remove docker docker-engine docker.io containerd runc<br>sudo apt-get update<br>sudo apt-get install \<br>    apt-transport-https \<br>    ca-certificates \<br>    curl \<br>    gnupg-agent \<br>    software-properties-common<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove docker docker-engine docker.io containerd runc</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install \</span><br><span class="line">    apt-transport-https \</span><br><span class="line">    ca-certificates \</span><br><span class="line">    curl \</span><br><span class="line">    gnupg-agent \</span><br><span class="line">    software-properties-common</span><br></pre></td></tr></table></figure>
 
 <p>信任 Docker 的 GPG 公钥</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</span><br></pre></td></tr></table></figure>
 
 <p>添加 Docker 软件源，可以把 <code>download.docker.com</code> 替换成国内镜像源，根据计算机的 CPU 框架选择合适的命令添加软件仓库</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># x86_64/amd64</span><br>sudo add-apt-repository \<br>   <span class="hljs-string">&quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \</span><br><span class="hljs-string">   <span class="hljs-subst">$(lsb_release -cs)</span> \</span><br><span class="hljs-string">   stable&quot;</span><br><br><span class="hljs-comment"># armhf</span><br>sudo add-apt-repository \<br>   <span class="hljs-string">&quot;deb [arch=armhf] https://download.docker.com/linux/ubuntu \</span><br><span class="hljs-string">   <span class="hljs-subst">$(lsb_release -cs)</span> \</span><br><span class="hljs-string">   stable&quot;</span><br><br><span class="hljs-comment"># arm64</span><br>sudo add-apt-repository \<br>   <span class="hljs-string">&quot;deb [arch=arm64] https://download.docker.com/linux/ubuntu \</span><br><span class="hljs-string">   <span class="hljs-subst">$(lsb_release -cs)</span> \</span><br><span class="hljs-string">   stable&quot;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># x86_64/amd64</span></span><br><span class="line">sudo add-apt-repository \</span><br><span class="line">   <span class="string">&quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \</span></span><br><span class="line"><span class="string">   <span class="subst">$(lsb_release -cs)</span> \</span></span><br><span class="line"><span class="string">   stable&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># armhf</span></span><br><span class="line">sudo add-apt-repository \</span><br><span class="line">   <span class="string">&quot;deb [arch=armhf] https://download.docker.com/linux/ubuntu \</span></span><br><span class="line"><span class="string">   <span class="subst">$(lsb_release -cs)</span> \</span></span><br><span class="line"><span class="string">   stable&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># arm64</span></span><br><span class="line">sudo add-apt-repository \</span><br><span class="line">   <span class="string">&quot;deb [arch=arm64] https://download.docker.com/linux/ubuntu \</span></span><br><span class="line"><span class="string">   <span class="subst">$(lsb_release -cs)</span> \</span></span><br><span class="line"><span class="string">   stable&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>更新源并安装 Docker</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get update<br>sudo apt-get install docker-ce docker-ce-cli containerd.io<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install docker-ce docker-ce-cli containerd.io</span><br></pre></td></tr></table></figure>
 
 <h3 id="修改-Docker-镜像源"><a href="#修改-Docker-镜像源" class="headerlink" title="修改 Docker 镜像源"></a>修改 Docker 镜像源</h3><p>在 <code>/etc/docker</code> 文件夹内添加 <code>daemon.json</code> 文件，并添加以下内容，可以把下面的七牛云镜像源替换成其他的镜像源</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs json">&#123;<br>  <span class="hljs-attr">&quot;registry-mirrors&quot;</span>: [<span class="hljs-string">&quot;https://reg-mirror.qiniu.com&quot;</span>]<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;registry-mirrors&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;https://reg-mirror.qiniu.com&quot;</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 
 <p>添加完成后重启 Docker 服务</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo systemctl restart docker<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></table></figure>
 
 <h2 id="安装-Home-Assistant-环境"><a href="#安装-Home-Assistant-环境" class="headerlink" title="安装 Home Assistant 环境"></a>安装 Home Assistant 环境</h2><p>拉取 Home Assistant 镜像</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker pull homeassistant/home-assistant:stable<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull homeassistant/home-assistant:stable</span><br></pre></td></tr></table></figure>
 
 <p>启动容器</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker run -d --name=<span class="hljs-string">&quot;home-assistant&quot;</span> --net=host --restart=always \<br>       -v /path/to/hass:/config \<br>       -v /etc/localtime:/etc/localtime:ro \<br>       homeassistant/home-assistant:stable<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name=<span class="string">&quot;home-assistant&quot;</span> --net=host --restart=always \</span><br><span class="line">       -v /path/to/hass:/config \</span><br><span class="line">       -v /etc/localtime:/etc/localtime:ro \</span><br><span class="line">       homeassistant/home-assistant:stable</span><br></pre></td></tr></table></figure>
 
 <p>过段时间打开浏览器 <code>http://&lt;your_ip:8123&gt;</code> 就能访问 Home Assistant 的界面</p>
 <h2 id="参考来源"><a href="#参考来源" class="headerlink" title="参考来源"></a>参考来源</h2><ul>
@@ -233,24 +244,25 @@
     <div class="comments-container content-padding--primary soft-size--large soft-style--box">
       <div id="waline_thread" class="waline-thread"></div>
     </div>
-    <script src="//unpkg.com/@waline/client@v2.4.0/dist/waline.js"></script>
-    <script>
-      Waline.init({
+    <script type="module">
+      import { init } from '//unpkg.com/@waline/client@v2/dist/waline.mjs';
+      init({
         el: '#waline_thread',
         serverURL: 'https://waline.zimiao.moe',
         avatar: '',
         visitor: true,
         emoji: [
-          'https://unpkg.com/@waline/emojis@1.0.1/alus',
-          'https://unpkg.com/@waline/emojis@1.0.1/tieba',
-          'https://unpkg.com/@waline/emojis@1.0.1/weibo',
-          'https://unpkg.com/@waline/emojis@1.0.1/bilibili',
+          'https://unpkg.com/@waline/emojis@1.2.0/alus',
+          'https://unpkg.com/@waline/emojis@1.2.0/tieba',
+          'https://unpkg.com/@waline/emojis@1.2.0/weibo',
+          'https://unpkg.com/@waline/emojis@1.2.0/bilibili',
           'https://valine-emoji.bili33.top/bilibiliHotKey',
           'https://valine-emoji.bili33.top/bilibili2233',
           'https://valine-emoji.bili33.top/Snow-Miku',
           'https://valine-emoji.bili33.top/Tsuri-me-ju_mimi'
         ],
         uploadImage: false,
+        search: false,
       });
     </script>
   
@@ -397,7 +409,7 @@
       
     </div>
      
-    <p>&copy; 2022 <a href="/" target="_blank">梓喵</a></p>
+    <p>&copy; 2023 <a href="/" target="_blank">梓喵</a></p>
 
     
 
@@ -448,6 +460,62 @@
 <!-- dplayer -->
 
 
+<!-- copy button  -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+<!-- https://clipboardjs.com/ -->
+
+
+<script type="text/javascript">
+	(function () {
+		function getCodeType (elem) {
+			const classs = Array.from(elem.classList.values());
+			if (classs && classs.length > 1) {
+				return classs[1];
+			}
+			return "plain";
+		}
+
+		window.addEventListener("DOMContentLoaded", () => {
+			const copyBtnClass = "copy-btn";
+			//  instantiate clipboardjs 
+			const clipboard = new ClipboardJS('.' + copyBtnClass);
+
+			clipboard.on('success', function (e) {
+				console.info('Action:', e.action);
+				console.info('Text:', e.text);
+				console.info('Trigger:', e.trigger);
+				if (e.trigger) {
+					e.trigger.classList.add("copied");
+					setTimeout(() => {
+						e.trigger.classList.remove("copied");
+					}, 3000);
+				}
+				e.clearSelection();
+			});
+
+			clipboard.on('error', function (e) {
+				console.error('Action:', e.action);
+				console.error('Trigger:', e.trigger);
+			});
+
+			document.querySelectorAll('figure.highlight').forEach((elem) => {
+				const codeContent = elem.querySelector("td.code");
+				const copyButton = document.createElement('button');
+				copyButton.setAttribute("class", copyBtnClass);
+				copyButton.setAttribute("title", "Copy Code");
+				copyButton.setAttribute("data-clipboard-text", codeContent.innerText);
+				elem.insertBefore(copyButton, elem.children[0]);
+			});
+		})
+	})();
+</script>
+
+
+
+
+
+
 
 
   
@@ -488,6 +556,7 @@
 
 
 
+
   <!-- Umami Analytics START -->
   <script>
     (function() {
@@ -495,12 +564,13 @@
         return console.log("本地调试");
       }
       var um = document.createElement("script");
-      um.src = "https://umami.zimiao.moe/azunyan.js"
-      um.setAttribute("data-website-id", "a2b25f74-424e-4cf8-9ef0-12cbf8cd5389");
+      um.src = ""
+      um.setAttribute("data-website-id", "");
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(um, s);
     })();
   </script>
+
 
 
   <!-- Cloudflare Analytics START -->
