@@ -1396,16 +1396,16 @@ html.show-mobile-nav .navbar-list {
 .content-container.post-container .widget-info .widget-toc .widget-body ol > li > a:hover {
   color: var(--theme-text-active);
 }
-.content-container.post-container .widget-info .widget-categorys .widget-body .categorys-list-item:not(:last-child) {
+.content-container.post-container .widget-info .widget-categories .widget-body .categories-list-item:not(:last-child) {
   margin-bottom: 14px;
 }
-.content-container.post-container .widget-info .widget-categorys .widget-body .categorys-list-item a {
+.content-container.post-container .widget-info .widget-categories .widget-body .categories-list-item a {
   color: var(--theme-text-primary);
   transition: color 0.3s ease, border-color 0.3s ease;
   font-weight: bolder;
   border-bottom: 2px solid var(--theme-border-primary);
 }
-.content-container.post-container .widget-info .widget-categorys .widget-body .categorys-list-item a:hover {
+.content-container.post-container .widget-info .widget-categories .widget-body .categories-list-item a:hover {
   color: var(--theme-text-active);
   border-color: var(--theme-text-active);
 }
