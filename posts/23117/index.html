@@ -22,7 +22,7 @@
 
   
 
-  <title>归档 | 梓喵</title>
+  <title>Linux编译SDR++和Satdump | 梓喵</title>
 
   
 
@@ -48,9 +48,9 @@
   <div class="root-container">
     
 <!-- header container -->
-<header class="header-container">
+<header class="header-container post">
   
-    <div class="post-image" style="background-image: url(https://pic.zimiao.moe/cover/YcAdLBU43hJ6Xxs.jpg)"></div>
+    <div class="post-image" style="background-image: url(https://pic.zimiao.moe/cover/zhJLz3GbiWcJxq5F.jpg)"></div>
   
 
   <!-- navbar -->
@@ -93,21 +93,41 @@
 
   
   
+
+  
+  
+
+  
+  
+
+  
+  
     <div class="header-content">
-      <div class="post-text layout-block layout-padding">
-        <h1 class="title-wrap">归档</h1>
-        <h2 class="title-sub-wrap">共有16篇文章</h2>
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap">Linux编译SDR++和Satdump</h1>
+          <h2 class="title-sub-wrap">
+            <strong>梓喵</strong>
+            <span>发布于</span>
+            <time  class="article-date" datetime="2024-09-08T15:00:00.000Z" itemprop="datePublished">2024年09月08日</time>
+          </h2>
+          
+          
+          <ul class="wrap-list dark">
+  
+    <li><a href="/categories/%E6%8A%98%E8%85%BE/">📒 折腾</a></li>
+    
+</ul>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/tags/Linux/">🏷️ Linux</a></li>
+  
+    <li><a href="/tags/%E6%97%A0%E7%BA%BF%E7%94%B5/">🏷️ 无线电</a></li>
+  
+</ul>
+        </div>
       </div>
     </div>
-  
-
-  
-  
-
-  
-  
-
-  
   
 
   
@@ -115,260 +135,115 @@
   
 </header>
 
-    <!-- 归档 -->
+    <!-- 文章 -->
 
-<!-- post list container -->
-
-
-
+<!-- 文章内容 -->
 <div class="body-container">
   <article class="content-container layout-block post-container">
-  <div class="article-info">
-    
-        <!-- archive card -->
-<div class="markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-  <h1>2024</h1>  
-  
-      <div>
-        <span>
-          <time  class="article-date" datetime="2024-09-08T15:00:00.000Z" itemprop="datePublished">2024年09月08日</time>
-        </span>
-          
-            <a href="/posts/23117/" itemprop="url">
-              <strong>Linux编译SDR++和Satdump</strong>
-            </a>
-          
+    <div class="article-info">
+      
+      
+      
+      
+      <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
+        <h1 id="SDR"><a href="#SDR" class="headerlink" title="SDR++"></a>SDR++</h1><h2 id="安装编译环境"><a href="#安装编译环境" class="headerlink" title="安装编译环境"></a>安装编译环境</h2><h3 id="安装软件包"><a href="#安装软件包" class="headerlink" title="安装软件包"></a>安装软件包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt install wget git build-essential cmake libfftw3-dev libglfw3-dev libvolk2-dev libzstd-dev libsoapysdr-dev libairspyhf-dev libairspy-dev libiio-dev libad9361-dev librtaudio-dev libhackrf-dev librtlsdr-dev libbladerf-dev liblimesuite-dev p7zip-full portaudio19-dev libcodec2-dev autoconf libtool xxd libudev-dev udev</span><br></pre></td></tr></table></figure>
 
-      </div>
-  
+<h2 id="安装-SDR-API"><a href="#安装-SDR-API" class="headerlink" title="安装 SDR API"></a>安装 SDR API</h2><h3 id="SDRPlay"><a href="#SDRPlay" class="headerlink" title="SDRPlay"></a>SDRPlay</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget https://www.sdrplay.com/software/SDRplay_RSP_API-Linux-3.15.2.run</span><br><span class="line"><span class="built_in">chmod</span> +x SDRplay_RSP_API-Linux-3.15.2.run</span><br><span class="line"><span class="built_in">sudo</span> ./SDRplay_RSP_API-Linux-3.15.2.run</span><br></pre></td></tr></table></figure>
+
+<h3 id="Perseus-SDR"><a href="#Perseus-SDR" class="headerlink" title="Perseus SDR"></a>Perseus SDR</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/Microtelecom/libperseus-sdr</span><br><span class="line"><span class="built_in">cd</span> libperseus-sdr</span><br><span class="line">autoreconf -i</span><br><span class="line">./configure</span><br><span class="line">make -j$(($(nproc) + <span class="number">1</span>)) V=s</span><br><span class="line"><span class="built_in">sudo</span> make install</span><br><span class="line"><span class="built_in">sudo</span> ldconfig</span><br></pre></td></tr></table></figure>
+
+<h2 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/AlexandreRouma/SDRPlusPlus</span><br><span class="line"><span class="built_in">cd</span> SDRPlusPlus</span><br><span class="line"><span class="built_in">mkdir</span> build &amp;&amp; <span class="built_in">cd</span> build</span><br><span class="line">cmake .. -DOPT_BUILD_BLADERF_SOURCE=ON -DOPT_BUILD_LIMESDR_SOURCE=ON -DOPT_BUILD_SDRPLAY_SOURCE=ON -DOPT_BUILD_NEW_PORTAUDIO_SINK=ON -DOPT_BUILD_M17_DECODER=ON -DOPT_BUILD_PERSEUS_SOURCE=ON</span><br><span class="line">make VERBOSE=1 -j$(($(nproc) + <span class="number">1</span>))</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+
+<h2 id="制作-deb-软件包"><a href="#制作-deb-软件包" class="headerlink" title="制作 deb 软件包"></a>制作 deb 软件包</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line">sh make_debian_package.sh ./build <span class="string">&#x27;libfftw3-dev, libglfw3-dev, libvolk2-dev, librtaudio-dev, libzstd-dev&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="CLI-使用示例"><a href="#CLI-使用示例" class="headerlink" title="CLI 使用示例"></a>CLI 使用示例</h2><h3 id="SDR-Server"><a href="#SDR-Server" class="headerlink" title="SDR++ Server"></a>SDR++ Server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sdrpp --server --port &lt;port&gt; --addr &lt;ip&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Satdump"><a href="#Satdump" class="headerlink" title="Satdump"></a>Satdump</h1><h2 id="安装编译环境-1"><a href="#安装编译环境-1" class="headerlink" title="安装编译环境"></a>安装编译环境</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt install wget git build-essential cmake g++ pkgconf libfftw3-dev libpng-dev libtiff-dev libjemalloc-dev libvolk2-dev libcurl4-openssl-dev libnng-dev librtlsdr-dev libhackrf-dev libairspy-dev libairspyhf-dev libglfw3-dev zenity libzstd-dev libomp-dev ocl-icd-opencl-dev</span><br><span class="line"><span class="comment"># 如果使用的是 Intel 核显需要安装 intel-opencl-icd 软件包</span></span><br><span class="line"><span class="built_in">sudo</span> apt-get install intel-opencl-icd</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装-SDR-API-1"><a href="#安装-SDR-API-1" class="headerlink" title="安装 SDR API"></a>安装 SDR API</h2><p>参考 SDR++ 的安装 SDR API 步骤</p>
+<h2 id="编译安装-1"><a href="#编译安装-1" class="headerlink" title="编译安装"></a>编译安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/SatDump/SatDump</span><br><span class="line"><span class="built_in">cd</span> SatDump</span><br><span class="line"><span class="built_in">mkdir</span> build &amp;&amp; <span class="built_in">cd</span> build</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果要禁用某些 SDR，可以添加 -DPLUGIN_HACKRF_SDR_SUPPORT=OFF 或类似内容</span></span><br><span class="line">cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr ..</span><br><span class="line"><span class="comment"># 如果不需要编译 GUI 可以添加 -DBUILD_GUI=OFF</span></span><br><span class="line">cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DBUILD_GUI=OFF ..</span><br><span class="line"></span><br><span class="line">make VERBOSE=1 -j$(($(nproc) + <span class="number">1</span>))</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+
+<h2 id="CLI-使用示例-1"><a href="#CLI-使用示例-1" class="headerlink" title="CLI 使用示例"></a>CLI 使用示例</h2><h3 id="实时解码-GK-2A"><a href="#实时解码-GK-2A" class="headerlink" title="实时解码 GK-2A"></a>实时解码 GK-2A</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">satdump live gk2a_lrit &lt;gk2a_output&gt; --<span class="built_in">source</span> sdrplay --samplerate 2000000 --frequency 1692140000 --lna_gain 0 --if_gain 20</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>--source</code> 使用的接收设备类型</li>
+<li><code>--samplerate</code> 接收的带宽</li>
+<li><code>--frequency</code> 接收的频率</li>
+</ul>
+<p>其他的选项和接收卫星的类型可以在 <a target="_blank" rel="noopener" href="https://docs.satdump.org/index.html">https://docs.satdump.org/index.html</a> 找到</p>
+<h2 id="参考来源"><a href="#参考来源" class="headerlink" title="参考来源"></a>参考来源</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/AlexandreRouma/SDRPlusPlus">https://github.com/AlexandreRouma/SDRPlusPlus</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/SatDump/SatDump">https://github.com/SatDump/SatDump</a></li>
+</ul>
+
+      </section>
+
+      
+      
+        <nav class="article-nav">
+          
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+      <div class="card-cover" background-image-lazy data-img="https://pic.zimiao.moe/cover/C8qY84q4gVNyB6ML.jpg"></div>
+    
+    <div class="card-text">
+      
+        <a href="/posts/35234/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">OpenWRT 添加 4G/5G 模块支持</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
 </div>
+          
+        </nav>
+      
 
-    
-        <!-- archive card -->
-<div class="markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-  <h1>2021</h1>  
+      <section class="page-message-container layout-padding">
+        
+
+
   
-      <div>
-        <span>
-          <time  class="article-date" datetime="2021-10-26T14:32:00.000Z" itemprop="datePublished">2021年10月26日</time>
-        </span>
-          
-            <a href="/posts/35234/" itemprop="url">
-              <strong>OpenWRT 添加 4G/5G 模块支持</strong>
-            </a>
-          
-
-      </div>
   
-      <div>
-        <span>
-          <time  class="article-date" datetime="2021-01-14T12:26:00.000Z" itemprop="datePublished">2021年01月14日</time>
-        </span>
-          
-            <a href="/posts/63258/" itemprop="url">
-              <strong>搭建 Home Assistant 智能家居环境</strong>
-            </a>
-          
 
-      </div>
   
-</div>
-
-    
-        <!-- archive card -->
-<div class="markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-  <h1>2020</h1>  
   
-      <div>
-        <span>
-          <time  class="article-date" datetime="2020-05-17T17:14:30.000Z" itemprop="datePublished">2020年05月17日</time>
-        </span>
-          
-            <a href="/posts/38470/" itemprop="url">
-              <strong>模拟 JoyControl 刷 Amiibo</strong>
-            </a>
-          
 
-      </div>
   
-</div>
-
-    
-        <!-- archive card -->
-<div class="markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-  <h1>2019</h1>  
   
-      <div>
-        <span>
-          <time  class="article-date" datetime="2019-10-07T12:51:00.000Z" itemprop="datePublished">2019年10月07日</time>
-        </span>
-          
-            <a href="/posts/46684/" itemprop="url">
-              <strong>开箱 - Elgato HD60S 采集盒</strong>
-            </a>
-          
-
-      </div>
+    <div class="comments-container content-padding--primary soft-size--large soft-style--box">
+      <div id="waline_thread" class="waline-thread"></div>
+    </div>
+    <script type="module">
+      import { init } from '//unpkg.com/@waline/client@v2/dist/waline.mjs';
+      init({
+        el: '#waline_thread',
+        serverURL: 'https://waline.zimiao.moe',
+        avatar: '',
+        visitor: true,
+        emoji: [
+          'https://unpkg.com/@waline/emojis@1.2.0/alus',
+          'https://unpkg.com/@waline/emojis@1.2.0/tieba',
+          'https://unpkg.com/@waline/emojis@1.2.0/weibo',
+          'https://unpkg.com/@waline/emojis@1.2.0/bilibili',
+          'https://valine-emoji.bili33.top/bilibiliHotKey',
+          'https://valine-emoji.bili33.top/bilibili2233',
+          'https://valine-emoji.bili33.top/Snow-Miku',
+          'https://valine-emoji.bili33.top/Tsuri-me-ju_mimi'
+        ],
+        uploadImage: false,
+        search: false,
+      });
+    </script>
   
-      <div>
-        <span>
-          <time  class="article-date" datetime="2019-10-06T05:31:00.000Z" itemprop="datePublished">2019年10月06日</time>
-        </span>
-          
-            <a href="/posts/61260/" itemprop="url">
-              <strong>水#3 更换博客主题</strong>
-            </a>
-          
 
-      </div>
-  
-      <div>
-        <span>
-          <time  class="article-date" datetime="2019-04-26T15:00:00.000Z" itemprop="datePublished">2019年04月26日</time>
-        </span>
-          
-            <a href="/posts/53555/" itemprop="url">
-              <strong>使用 Tinc 组建大内网</strong>
-            </a>
-          
 
-      </div>
-  
-      <div>
-        <span>
-          <time  class="article-date" datetime="2019-02-13T01:21:00.000Z" itemprop="datePublished">2019年02月13日</time>
-        </span>
-          
-            <a href="/posts/20593/" itemprop="url">
-              <strong>水#2 重新搭建博客的部署环境</strong>
-            </a>
-          
-
-      </div>
-  
-</div>
-
-    
-        <!-- archive card -->
-<div class="markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-  <h1>2018</h1>  
-  
-      <div>
-        <span>
-          <time  class="article-date" datetime="2018-02-12T15:58:00.000Z" itemprop="datePublished">2018年02月12日</time>
-        </span>
-          
-            <a href="/posts/61570/" itemprop="url">
-              <strong>使用 n2n 穿透内网</strong>
-            </a>
-          
-
-      </div>
-  
-</div>
-
-    
-        <!-- archive card -->
-<div class="markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-  <h1>2017</h1>  
-  
-      <div>
-        <span>
-          <time  class="article-date" datetime="2017-12-24T02:24:00.000Z" itemprop="datePublished">2017年12月24日</time>
-        </span>
-          
-            <a href="/posts/44799/" itemprop="url">
-              <strong>水#1 入手一台PS4 PRO</strong>
-            </a>
-          
-
-      </div>
-  
-      <div>
-        <span>
-          <time  class="article-date" datetime="2017-10-08T20:04:00.000Z" itemprop="datePublished">2017年10月08日</time>
-        </span>
-          
-            <a href="/posts/7056/" itemprop="url">
-              <strong>使用 Nginx 做 SNI 反代</strong>
-            </a>
-          
-
-      </div>
-  
-      <div>
-        <span>
-          <time  class="article-date" datetime="2017-05-29T01:40:00.000Z" itemprop="datePublished">2017年05月29日</time>
-        </span>
-          
-            <a href="/posts/51311/" itemprop="url">
-              <strong>Archlinux 安装 VNC 服务端</strong>
-            </a>
-          
-
-      </div>
-  
-      <div>
-        <span>
-          <time  class="article-date" datetime="2017-05-26T00:33:00.000Z" itemprop="datePublished">2017年05月26日</time>
-        </span>
-          
-            <a href="/posts/18671/" itemprop="url">
-              <strong>Linux 开机挂载硬盘</strong>
-            </a>
-          
-
-      </div>
-  
-      <div>
-        <span>
-          <time  class="article-date" datetime="2017-05-25T12:52:00.000Z" itemprop="datePublished">2017年05月25日</time>
-        </span>
-          
-            <a href="/posts/38685/" itemprop="url">
-              <strong>Cubieboard2 安装 Lxde 桌面</strong>
-            </a>
-          
-
-      </div>
-  
-      <div>
-        <span>
-          <time  class="article-date" datetime="2017-03-21T21:31:00.000Z" itemprop="datePublished">2017年03月21日</time>
-        </span>
-          
-            <a href="/posts/11941/" itemprop="url">
-              <strong>Cubieboard2 安装 Archlinux 到 SD 卡</strong>
-            </a>
-          
-
-      </div>
-  
-</div>
-
-    
-        <!-- archive card -->
-<div class="markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-  <h1>2016</h1>  
-  
-      <div>
-        <span>
-          <time  class="article-date" datetime="2016-12-04T10:42:00.000Z" itemprop="datePublished">2016年12月04日</time>
-        </span>
-          
-            <a href="/posts/16108/" itemprop="url">
-              <strong>Hello World</strong>
-            </a>
-          
-
-      </div>
-  
-</div>
-
-    
-  </div>
-  <div class="widget-info">
-    <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+      </section>
+    </div>
+    <div class="widget-info">
+      <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
   <div class="widget-body">
     
       <img src="https://gravatar.loli.net/avatar/b8aefde5d5df28594e932ab1a4ef2306?s=200&amp;r=g&amp;d=retro" class="soft-size--round soft-style--box" alt="梓喵">
@@ -401,9 +276,23 @@
   </div>
 </section>
 
-    
+      
+<section class="widget-toc widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-toc" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M134.50666666 767.46666668H460.8c27.73333333 0 50.24000001 22.50666668 50.24000001 50.23999999v50.13333333c0 27.73333333-22.50666668 50.24000001-50.24000001 50.24000001H134.50666666c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.24000001v-50.13333333c0.10666668-27.73333333 22.50666668-50.24000001 50.24000001-50.24000001zM84.37333332 541.65333333h326.18666669c27.73333333 0 50.24000001 22.39999999 50.23999999 50.13333334v50.24000001c0 27.73333333-22.50666668 50.24000001-50.24000002 50.23999999H84.37333332c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.23999999v-50.24000001c0-27.73333333 22.50666668-50.13333334 50.24000001-50.13333334zM134.50666666 315.83999999H460.8c27.73333333 0 50.24000001 22.50666668 50.24000001 50.24000001v50.24000001c0 27.73333333-22.50666668 50.13333334-50.24000001 50.13333333H134.50666666c-27.73333333 0-50.24000001-22.39999999-50.23999999-50.13333333v-50.24000001c0.10666668-27.84000001 22.50666668-50.24000001 50.24000001-50.23999999zM209.81333332 89.91999999h326.18666671c27.73333333 0 50.24000001 22.39999999 50.23999997 50.13333335v50.23999999c0 27.73333333-22.50666668 50.24000001-50.24000001 50.24000001H209.81333332c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.24000001v-50.24000001c0-27.73333333 22.50666668-50.13333334 50.24000001-50.13333333zM692.05333333 623.36l274.66666669 176.00000002c23.36000001 14.93333333 30.08 45.97333334 15.14666666 69.33333332L954.77333334 910.93333333c-14.93333333 23.25333334-45.97333334 30.08-69.33333335 15.14666667l-274.66666666-176c-23.36000001-14.93333333-30.08-45.97333334-15.14666667-69.33333333l27.09333334-42.24000001c14.93333333-23.36000001 46.08000001-30.08 69.33333333-15.14666666z" fill="currentColor"></path>
+</svg>
+    <span>TOC</span>
+  </div>
+  <div class="widget-body">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E7%BC%96%E8%AF%91%E7%8E%AF%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text">安装编译环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E5%8C%85"><span class="toc-number">1.1.</span> <span class="toc-text">安装软件包</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-SDR-API"><span class="toc-number">2.</span> <span class="toc-text">安装 SDR API</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SDRPlay"><span class="toc-number">2.1.</span> <span class="toc-text">SDRPlay</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Perseus-SDR"><span class="toc-number">2.2.</span> <span class="toc-text">Perseus SDR</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85"><span class="toc-number">3.</span> <span class="toc-text">编译安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%B6%E4%BD%9C-deb-%E8%BD%AF%E4%BB%B6%E5%8C%85"><span class="toc-number">4.</span> <span class="toc-text">制作 deb 软件包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CLI-%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="toc-number">5.</span> <span class="toc-text">CLI 使用示例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SDR-Server"><span class="toc-number">5.1.</span> <span class="toc-text">SDR++ Server</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E7%BC%96%E8%AF%91%E7%8E%AF%E5%A2%83-1"><span class="toc-number">6.</span> <span class="toc-text">安装编译环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-SDR-API-1"><span class="toc-number">7.</span> <span class="toc-text">安装 SDR API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85-1"><span class="toc-number">8.</span> <span class="toc-text">编译安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CLI-%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B-1"><span class="toc-number">9.</span> <span class="toc-text">CLI 使用示例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E6%97%B6%E8%A7%A3%E7%A0%81-GK-2A"><span class="toc-number">9.1.</span> <span class="toc-text">实时解码 GK-2A</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%9D%A5%E6%BA%90"><span class="toc-number">10.</span> <span class="toc-text">参考来源</span></a></li></ol>
+  </div>
+</section>
 
-    <section class="widget-categories widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+
+      
+
+      <section class="widget-categories widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
   <div class="widget-title">
     <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
   <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
@@ -429,7 +318,7 @@
   </div>
 </section>
 
-    <section class="widget-tags widget-item  layout-margin content-padding--primary soft-size--large soft-style--box">
+      <section class="widget-tags widget-item  layout-margin content-padding--primary soft-size--large soft-style--box">
   <div class="widget-title">
     <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
   <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
@@ -442,15 +331,9 @@
     </div>
   </div>
 </section>
-  </div>
-</article>
-
+    </div>
+  </article>
 </div>
-
-
-
-
-
 
     <!-- footer container -->
 <footer id="footer" class="footer">
@@ -545,6 +428,61 @@
   
   
 
+
+
+
+
+
+<!-- copy button  -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+<!-- https://clipboardjs.com/ -->
+
+
+<script type="text/javascript">
+	(function () {
+		function getCodeType (elem) {
+			const classs = Array.from(elem.classList.values());
+			if (classs && classs.length > 1) {
+				return classs[1];
+			}
+			return "plain";
+		}
+
+		window.addEventListener("DOMContentLoaded", () => {
+			const copyBtnClass = "copy-btn";
+			//  instantiate clipboardjs 
+			const clipboard = new ClipboardJS('.' + copyBtnClass);
+
+			clipboard.on('success', function (e) {
+				console.info('Action:', e.action);
+				console.info('Text:', e.text);
+				console.info('Trigger:', e.trigger);
+				if (e.trigger) {
+					e.trigger.classList.add("copied");
+					setTimeout(() => {
+						e.trigger.classList.remove("copied");
+					}, 3000);
+				}
+				e.clearSelection();
+			});
+
+			clipboard.on('error', function (e) {
+				console.error('Action:', e.action);
+				console.error('Trigger:', e.trigger);
+			});
+
+			document.querySelectorAll('figure.highlight').forEach((elem) => {
+				const codeContent = elem.querySelector("td.code");
+				const copyButton = document.createElement('button');
+				copyButton.setAttribute("class", copyBtnClass);
+				copyButton.setAttribute("title", "Copy Code");
+				copyButton.setAttribute("data-clipboard-text", codeContent.innerText);
+				elem.insertBefore(copyButton, elem.children[0]);
+			});
+		})
+	})();
+</script>
 
 
 
