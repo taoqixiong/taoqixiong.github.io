@@ -114,7 +114,7 @@
           
             <h2 class="last-time">
               <span>最后更新于</span>
-              <time  class="article-updated" datetime="2025-03-13T02:56:23.892Z" itemprop="dateUpdated">2025年03月13日</time>
+              <time  class="article-updated" datetime="2025-03-13T07:51:04.887Z" itemprop="dateUpdated">2025年03月13日</time>
             </h2>
           
           
@@ -151,7 +151,23 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近入坑了<del>无限垫</del>，玩 ft8 这类数字无线电需要比较精确的时间，就想到搞个 GPS 授时服务器，于是就开始折腾，一开始选择树莓派 zero 2w 作为主机，结果发现开发板只有1个 uart 接口，后来翻找手头的开发板发现辛狐的 pico 系列有多个 uart 接口，并且官方有很好的支持，修改起来比较简单就选用作为主机，最后成本还不超过100元。</p>
+        <style type="text/css">
+    table {
+        table-layout: fixed;
+        empty-cells: show;
+    }
+  .markdown-body th {
+    text-align: center;
+    vertical-align: middle!important;
+  }
+    .article-entry table td:nth-child(1) {
+    text-align: center;
+    vertical-align: middle!important;
+        white-space: normal;
+    }
+</style>
+
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近入坑了<del>无限垫</del>，玩 ft8 这类数字无线电需要比较精确的时间，就想到搞个 GPS 授时服务器，于是就开始折腾，一开始选择树莓派 zero 2w 作为主机，结果发现开发板只有1个 uart 接口，后来翻找手头的开发板发现辛狐的 pico 系列有多个 uart 接口，并且官方有很好的支持，修改起来比较简单就选用作为主机，最后成本还不超过100元。</p>
 <h1 id="硬件及接线方式"><a href="#硬件及接线方式" class="headerlink" title="硬件及接线方式"></a>硬件及接线方式</h1><p>这里选用的 Luckfox Pico Plus ，可选用幸狐的其他开发板，设置根据开发板不同设置会有所不同，系统使用的是 buildroot ，GPS模块选用的是 ATGM336H </p>
 <p>这里引用官网的引脚图<br><img src="https://wiki.luckfox.com/zh/assets/images/LUCKFOX-PICO-PLUS-GPIO-b2199af217ec733d6e12695d0e79cd60.jpg" alt="LuckFox Pico Plus 引脚图"></p>
 <table>
