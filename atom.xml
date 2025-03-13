@@ -6,7 +6,7 @@
   <link href="https://zimiao.moe/atom.xml" rel="self"/>
   
   <link href="https://zimiao.moe/"/>
-  <updated>2024-09-08T08:53:39.756Z</updated>
+  <updated>2025-03-13T02:56:23.892Z</updated>
   <id>https://zimiao.moe/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>搭建 GPS 授时服务器</title>
+    <link href="https://zimiao.moe/posts/14454/"/>
+    <id>https://zimiao.moe/posts/14454/</id>
+    <published>2025-03-12T22:00:00.000Z</published>
+    <updated>2025-03-13T02:56:23.892Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;最近入坑了&lt;del&gt;无限垫&lt;/del&gt;，玩 ft8 这类数字无线电需要比较精确的时间，就想到搞个 GPS 授时服务器，于是就开始折腾，一开始</summary>
+      
+    
+    
+    
+    <category term="折腾" scheme="https://zimiao.moe/categories/%E6%8A%98%E8%85%BE/"/>
+    
+    
+    <category term="luckfox" scheme="https://zimiao.moe/tags/luckfox/"/>
+    
+    <category term="linux" scheme="https://zimiao.moe/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Linux编译SDR++和Satdump</title>
     <link href="https://zimiao.moe/posts/23117/"/>
     <id>https://zimiao.moe/posts/23117/</id>
     <published>2024-09-08T15:00:00.000Z</published>
-    <updated>2024-09-08T08:53:39.756Z</updated>
+    <updated>2025-03-13T02:56:23.889Z</updated>
     
     
       
@@ -45,7 +69,7 @@
     <link href="https://zimiao.moe/posts/35234/"/>
     <id>https://zimiao.moe/posts/35234/</id>
     <published>2021-10-26T14:32:00.000Z</published>
-    <updated>2024-09-08T08:53:39.756Z</updated>
+    <updated>2025-03-13T02:56:23.889Z</updated>
     
     
       
@@ -67,7 +91,7 @@
     <link href="https://zimiao.moe/posts/63258/"/>
     <id>https://zimiao.moe/posts/63258/</id>
     <published>2021-01-14T12:26:00.000Z</published>
-    <updated>2024-09-08T08:53:39.760Z</updated>
+    <updated>2025-03-13T02:56:23.892Z</updated>
     
     
       
@@ -91,7 +115,7 @@
     <link href="https://zimiao.moe/posts/38470/"/>
     <id>https://zimiao.moe/posts/38470/</id>
     <published>2020-05-17T17:14:30.000Z</published>
-    <updated>2024-09-08T08:53:39.760Z</updated>
+    <updated>2025-03-13T02:56:23.892Z</updated>
     
     
       
@@ -114,7 +138,7 @@
     <link href="https://zimiao.moe/posts/46684/"/>
     <id>https://zimiao.moe/posts/46684/</id>
     <published>2019-10-07T12:51:00.000Z</published>
-    <updated>2024-09-08T08:53:39.760Z</updated>
+    <updated>2025-03-13T02:56:23.889Z</updated>
     
     
       
@@ -136,7 +160,7 @@
     <link href="https://zimiao.moe/posts/61260/"/>
     <id>https://zimiao.moe/posts/61260/</id>
     <published>2019-10-06T05:31:00.000Z</published>
-    <updated>2024-09-08T08:53:39.763Z</updated>
+    <updated>2025-03-13T02:56:23.892Z</updated>
     
     
       
@@ -158,7 +182,7 @@
     <link href="https://zimiao.moe/posts/53555/"/>
     <id>https://zimiao.moe/posts/53555/</id>
     <published>2019-04-26T15:00:00.000Z</published>
-    <updated>2024-09-08T08:53:39.760Z</updated>
+    <updated>2025-03-13T02:56:23.889Z</updated>
     
     
       
@@ -180,7 +204,7 @@
     <link href="https://zimiao.moe/posts/20593/"/>
     <id>https://zimiao.moe/posts/20593/</id>
     <published>2019-02-13T01:21:00.000Z</published>
-    <updated>2024-09-08T08:53:39.760Z</updated>
+    <updated>2025-03-13T02:56:23.892Z</updated>
     
     
       
@@ -211,7 +235,7 @@
     <link href="https://zimiao.moe/posts/61570/"/>
     <id>https://zimiao.moe/posts/61570/</id>
     <published>2018-02-12T15:58:00.000Z</published>
-    <updated>2024-09-08T08:53:39.756Z</updated>
+    <updated>2025-03-13T02:56:23.889Z</updated>
     
     
       
@@ -233,7 +257,7 @@
     <link href="https://zimiao.moe/posts/44799/"/>
     <id>https://zimiao.moe/posts/44799/</id>
     <published>2017-12-24T02:24:00.000Z</published>
-    <updated>2024-09-08T08:53:39.760Z</updated>
+    <updated>2025-03-13T02:56:23.892Z</updated>
     
     
       
@@ -255,7 +279,7 @@
     <link href="https://zimiao.moe/posts/7056/"/>
     <id>https://zimiao.moe/posts/7056/</id>
     <published>2017-10-08T20:04:00.000Z</published>
-    <updated>2024-09-08T08:53:39.756Z</updated>
+    <updated>2025-03-13T02:56:23.889Z</updated>
     
     
       
@@ -280,7 +304,7 @@
     <link href="https://zimiao.moe/posts/51311/"/>
     <id>https://zimiao.moe/posts/51311/</id>
     <published>2017-05-29T01:40:00.000Z</published>
-    <updated>2024-09-08T08:53:39.753Z</updated>
+    <updated>2025-03-13T02:56:23.889Z</updated>
     
     
       
@@ -302,7 +326,7 @@
     <link href="https://zimiao.moe/posts/18671/"/>
     <id>https://zimiao.moe/posts/18671/</id>
     <published>2017-05-26T00:33:00.000Z</published>
-    <updated>2024-09-08T08:53:39.756Z</updated>
+    <updated>2025-03-13T02:56:23.889Z</updated>
     
     
       
@@ -325,7 +349,7 @@
     <link href="https://zimiao.moe/posts/38685/"/>
     <id>https://zimiao.moe/posts/38685/</id>
     <published>2017-05-25T12:52:00.000Z</published>
-    <updated>2024-09-08T08:53:39.756Z</updated>
+    <updated>2025-03-13T02:56:23.889Z</updated>
     
     
       
@@ -347,7 +371,7 @@
     <link href="https://zimiao.moe/posts/11941/"/>
     <id>https://zimiao.moe/posts/11941/</id>
     <published>2017-03-21T21:31:00.000Z</published>
-    <updated>2024-09-08T08:53:39.753Z</updated>
+    <updated>2025-03-13T02:56:23.889Z</updated>
     
     
       
@@ -370,7 +394,7 @@
     <link href="https://zimiao.moe/posts/16108/"/>
     <id>https://zimiao.moe/posts/16108/</id>
     <published>2016-12-04T10:42:00.000Z</published>
-    <updated>2024-09-08T08:53:39.756Z</updated>
+    <updated>2025-03-13T02:56:23.889Z</updated>
     
     
       
